@@ -1,0 +1,222 @@
+% =====================================================================
+% How Computer Science Borrowed from Neuroscience -- GreyFox, Jibaro Archives, 2026
+% Transcribed from screenshots into LaTeX
+% =====================================================================
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1.15in]{geometry}
+% microtype expansion needs scalable fonts; disable expansion, keep protrusion
+\usepackage[protrusion=true,expansion=false]{microtype}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{ragged2e}
+\usepackage[hidelinks,
+            colorlinks=true,
+            linkcolor=black,
+            citecolor=teal!70!black,
+            urlcolor=teal!70!black]{hyperref}
+
+% --- Title / section styling -----------------------------------------
+\titleformat{\section}{\large\bfseries}{\thesection}{0.8em}{}
+\titlespacing*{\section}{0pt}{1.6em}{0.6em}
+
+% Slightly tighter quote
+\renewenvironment{quote}
+  {\list{}{\leftmargin=2.2em\rightmargin=2.2em\topsep=0.4em\parsep=0.3em}%
+   \item\relax\itshape}
+  {\endlist}
+
+% Attribution line under a pull quote
+\newcommand{\attrib}[1]{\par\vspace{0.2em}\normalfont\small\hspace*{0em}--\ #1\par}
+
+\setlength{\emergencystretch}{2em}
+
+\begin{document}
+
+% =====================================================================
+% Title block
+% =====================================================================
+\begin{center}
+{\LARGE\bfseries HOW COMPUTER SCIENCE\\[0.3em]BORROWED FROM NEUROSCIENCE}\\[1.0em]
+{\itshape\large Doing webpages and making apps is not Computer Science,\\
+but a consequence and discipline in the very broad field of Computation}\\[1.2em]
+{\itshape A collection of private note fragments, gathered and completed from GreyFox's Notebook}\\[0.3em]
+Shared for Jibaro Archives, marked by IIX.\\[0.2em]
+{\small\color{gray!60!black} 2026 \ //\ Open Classification}
+\end{center}
+
+\vspace{0.5em}
+\noindent\rule{\textwidth}{1.2pt}
+\vspace{0.4em}
+
+% =====================================================================
+% Abstract
+% =====================================================================
+\begin{center}
+\textbf{\large ABSTRACT}
+\end{center}
+
+In 1943, two neurophysiologists published a model of how a biological neuron fires. Fifteen years later, a research psychologist at the Cornell Aeronautical Laboratory built hardware from that model and called it the Perceptron. That act of copying initiated a chain: the Perceptron became the multilayer network, the multilayer network became deep learning, deep learning produced systems trained on the recorded outputs of human cognition, and those systems have now driven research programs attempting to map, simulate, and execute biological neural tissue directly in silicon or in living organoid cultures. This paper traces that chain from its neuroscientific source material to its present frontier, step by step, without detour.
+
+\vspace{0.4em}
+\noindent\rule{\textwidth}{0.4pt}
+
+% =====================================================================
+% 1
+% =====================================================================
+\section{The Source Material: A Neuron on Paper}
+
+The chain begins not with an engineer but with two neurophysiologists. In 1943, Warren McCulloch and Walter Pitts published a paper attempting to describe, in formal logical terms, how a biological neuron produces an output from its inputs.~[1] A neuron receives signals from other neurons across its dendrites. When the sum of those incoming signals crosses a threshold, the neuron fires, sending an electrical pulse down its axon to the next cell. McCulloch and Pitts asked whether that behavior could be expressed as a logic operation. Their answer was yes: the neuron is, in functional terms, a threshold gate.
+
+This was a description of neuroscience, not a proposal for engineering. McCulloch was a neurophysiologist and psychiatrist. Pitts was a logician. Neither was designing a computer. They were trying to understand the brain by finding the simplest formal system that could reproduce its basic unit of activity. The paper was published in the Bulletin of Mathematical Biophysics. It was read by engineers.
+
+Frank Rosenblatt at the Cornell Aeronautical Laboratory was one of them. In 1958 he took the McCulloch--Pitts model and built physical hardware from it. The Perceptron received multiple weighted input signals, summed them, and fired an output when the sum exceeded a threshold.~[2] The design was not derived from mathematical principles of computation. It was lifted directly from the neurophysiological description of a nerve cell. The source material was neuroscience. The implementation was electrical.
+
+\begin{quote}
+``I've talked to you guys for an hour or so now and I'm already realizing how overwhelmed I get. I already feel so out of my depth, I'm mind blown, I can barely keep up. I mean I also practically arrived at this university yesterday, I'm new here but still\ldots\ damn\ldots\ how do you both know so much stuff? Lemme guess, don't say, years of experience.''
+\attrib{GreyFox}
+\end{quote}
+
+% =====================================================================
+% 2
+% =====================================================================
+\section{The Training Procedure: Neuroscience Follows the Hardware}
+
+A formally constructed algorithm can be proven correct. Given an input satisfying certain preconditions, the algorithm will produce an output satisfying certain postconditions, demonstrable by logical derivation without running the algorithm at all. The correctness is structural. It holds before execution.
+
+The Perceptron did not work that way. Rosenblatt did not derive its behavior from axioms. He exposed it to labeled examples, images of letters and shapes, and let it adjust its own weights incrementally until it classified them correctly. The process was called training, a word borrowed from animal learning research. The system improved through repeated exposure to data. That was not a computational method. It was a biological one, imported along with the architecture.
+
+Rosenblatt's 1958 paper in Psychological Review described the Perceptron as a model for information storage and organization in the brain. The title was not metaphorical. He believed he was building a machine that learned the way biological systems learn, and the training procedure was designed to reflect that. The vocabulary of neuroscience followed the hardware into the field and stayed there.
+
+\begin{quote}
+``Phew, well, we've been around haven't we? It's ok to be curious though.''
+\attrib{Digital Systems and Signals Processing Professor}
+\end{quote}
+
+% =====================================================================
+% 3
+% =====================================================================
+\section{Setback, Revival, and the Deep Network}
+
+The Perceptron's reach was limited. In 1969, Marvin Minsky and Seymour Papert published a formal analysis demonstrating that a single-layer perceptron could not solve problems that were not linearly separable, including the simple XOR operation.~[3] The result was widely read as a proof that the neural approach was fundamentally inadequate, and funding for connectionist research largely collapsed through the 1970s.
+
+The architecture survived in smaller research groups. In the 1980s, David Rumelhart, Geoffrey Hinton, and Ronald Williams formalized backpropagation, a method for training networks with multiple layers by propagating error signals backward through the network and adjusting weights at each layer proportionally.~[4] The borrowed unit could now be stacked. A network with hidden layers between input and output could learn representations that a single-layer device could not. The biological analogy deepened: the layered structure resembled the hierarchical organization of the visual cortex, where each layer of neurons extracts progressively more abstract features from the raw sensory signal.
+
+By the 2010s, deep networks trained on large datasets and run on GPU hardware were outperforming every prior approach in image recognition, speech recognition, and machine translation. The borrowed architecture, stacked, trained at scale, and fed with data, had become the dominant method in the field. Each layer of the network remained, structurally, a population of threshold units derived from the McCulloch--Pitts neuron.
+
+\begin{quote}
+``You know it gets weird when you virtualize in layers and have virtual machines upon virtual machines like a triple mirror effect?''
+\attrib{Digital Systems and Signals Processing Professor}
+\end{quote}
+
+\begin{quote}
+``Yeah but don't break your head or trade your health over nothing, it's rarely worth it if ever, especially if it doesn't make you money, hahahahaha you're young man!''
+\attrib{BME Doctor}
+\end{quote}
+
+% =====================================================================
+% 4
+% =====================================================================
+\section{The Furthest Extension: Uploading and Executing Brain Maps}
+
+If the neural network was the first loan from neuroscience, whole brain emulation represents the attempt to take the source itself. The underlying research program, sometimes called substrate-independent minds or mind uploading, begins from a specific premise: that the functional processes of a brain, perception, memory, reasoning, are in principle separable from the biological substrate that currently runs them. If the pattern can be mapped with sufficient fidelity, the argument goes, it can be transferred to and executed on a non-biological substrate.
+
+The technical pathway requires two things: a complete structural map of a brain's neural connectivity, and a computational substrate capable of simulating that map at sufficient resolution and speed. The first is called connectome mapping. The Human Connectome Project, funded by the NIH, has been working since 2009 to chart the structural and functional connectivity of the human brain using diffusion MRI and functional neuroimaging.~[6] At the cellular scale, electron microscopy has been used to reconstruct the complete connectome of \textit{C.~elegans}, a nematode with 302 neurons, and more recently, cubic millimeter sections of mouse and human cortex at synaptic resolution.
+
+The simulation side was pursued most visibly by the Blue Brain Project at EPFL, which ran from 2005 to December 2024 under the direction of Henry Markram. Its objective was to build a biologically detailed computational model of the neocortical column of a rat, reconstructed from experimental data and executed on supercomputing hardware.~[7] The project did not claim to simulate consciousness. It claimed to simulate the electrophysiological behavior of neurons and their synaptic interactions at a level of detail that would be impossible to observe experimentally in living tissue.
+
+A parallel development has been the emergence of biological computing platforms. FinalSpark's Neuroplatform, operational as of 2024, connects living human cortical organoids, lab-grown neural tissue derived from stem cells, to electrodes that allow both recording and stimulation.~[8] Organoids are not whole brains. They are clusters of neurons, typically a few millimeters across, that self-organize into layered structures resembling cortical tissue. FinalSpark and similar platforms are using them as wetware processing units: biological tissue performing computational tasks in response to electrical input, with its outputs read out digitally.
+
+Cortical Labs has taken a related approach with its DishBrain platform, in which cortical neurons cultured on a multi-electrode array were demonstrated to learn to play a simplified version of Pong through closed-loop electrophysiological feedback.~[9] The neurons were not pre-programmed with game rules. They adapted their firing patterns in response to stimulation that encoded the state of the game. The system learned, in a measurable behavioral sense, from experience.
+
+What these programs share is the attempt to close the loop between biological neural tissue and digital computation, either by simulating the tissue in silicon, growing it in a dish and reading its outputs, or mapping its connectivity in sufficient detail to reconstruct it elsewhere. None of them have achieved whole brain emulation of a human. None claim to have done so. What they have achieved is a progressive reduction in the distance between the biological original and its computational representation, at scales that were not technically feasible a decade ago.
+
+% =====================================================================
+% 5
+% =====================================================================
+\section{The Mirror Problem}
+
+The chain that began with McCulloch and Pitts modeling a neuron on paper reached, by the early 2020s, systems trained on essentially the entire recorded output of human language and thought. The architecture connecting those two points is the same in structural principle: a threshold unit, weighted inputs, a learned adjustment. What changed was scale, depth, and the nature of the training data. LeCun, Bengio, and Hinton documented how the same borrowed unit, stacked into deep networks and trained on large datasets, came to outperform every prior approach across vision, language, and speech.~[5] The scale of deployment has since grown to dimensions that have no biological analog.
+
+The training data for large language models is not synthetic. It is drawn from human writing, human conversation, human reasoning recorded across decades of digital text. The architecture is biological in origin. The training signal is human in origin. The result is a system whose outputs were shaped, at every stage, by something that came from outside computer science entirely.
+
+\begin{quote}
+``Maybe it's almost as if we are trying to mirror ourselves and something is reflecting back? But you guys are way smarter and more experienced than me.''
+\attrib{GreyFox}
+\end{quote}
+
+The brain mapping research in Section~4 is the furthest point on the same line. The Perceptron borrowed the neuron's architecture. The connectome projects are attempting to borrow the neuron's actual wiring. The direction of the chain has not changed. It has only continued.
+
+\begin{quote}
+``Careful you don't go crazy if you don't step it down.''
+\attrib{Biomedical Doctor}
+\end{quote}
+
+\begin{quote}
+``Like we said, some advice kiddo? Take it easy and don't jump the fence with uploading brain maps. Matter of fact enjoy life and don't dwell on it.''
+\attrib{Both BME Doctor and Digital Systems Professor}
+\end{quote}
+
+\begin{quote}
+``Hmm. I guess you might be right.''
+\attrib{GreyFox}
+\end{quote}
+
+% =====================================================================
+% 6
+% =====================================================================
+\section{Conclusion: End of the Chain So Far}
+
+The borrowing began with a description of a nerve cell. It produced the Perceptron, then the multilayer network, then deep learning, then systems trained on human-generated data at scale, then research programs attempting to simulate or directly execute biological neural tissue in computational hardware. Each step followed from the last. None of it was planned as a sequence. Each development drew on the one before it and reached back to neuroscience for what it could not derive from first principles.
+
+The Perceptron was a copy of a neuron. Deep learning is a copy of the cortex's hierarchical structure. Large language models were trained on the outputs of human minds. Connectome mapping attempts to reproduce the wiring of a brain at synaptic resolution. The chain runs in one direction: from the biological original toward an increasingly detailed computational representation of it.
+
+Where it ends is not yet known. What is documented here is how it started, how each step extended the one before it, and what the current frontier looks like. The source material was always neuroscience. The field borrowed from it at every stage where its own formal methods ran out.
+
+\vspace{0.4em}
+\noindent\rule{\textwidth}{0.4pt}
+
+% =====================================================================
+% References
+% =====================================================================
+\section*{REFERENCES}
+\addcontentsline{toc}{section}{References}
+
+\begin{enumerate}
+\setlength{\itemsep}{0.35em}
+
+\item W.~S. McCulloch and W.~Pitts, ``A Logical Calculus of the Ideas Immanent in Nervous Activity,'' \textit{Bulletin of Mathematical Biophysics}, vol.~5, pp.~115--133, 1943.
+
+\item F.~Rosenblatt, ``The Perceptron: A Probabilistic Model for Information Storage and Organization in the Brain,'' \textit{Psychological Review}, vol.~65, no.~6, pp.~386--408, 1958.
+
+\item M.~Minsky and S.~Papert, \textit{Perceptrons: An Introduction to Computational Geometry}. Cambridge, MA: MIT Press, 1969.
+
+\item D.~E. Rumelhart, G.~E. Hinton, and R.~J. Williams, ``Learning Representations by Back-Propagating Errors,'' \textit{Nature}, vol.~323, pp.~533--536, 1986.
+
+\item Y.~LeCun, Y.~Bengio, and G.~Hinton, ``Deep Learning,'' \textit{Nature}, vol.~521, pp.~436--444, 2015.
+
+\item D.~C. Van Essen et al., ``The WU-Minn Human Connectome Project: An Overview,'' \textit{NeuroImage}, vol.~80, pp.~62--79, 2013.
+
+\item H.~Markram et al., ``Reconstruction and Simulation of Neocortical Microcircuitry,'' \textit{Cell}, vol.~163, no.~2, pp.~456--492, 2015.
+
+\item L.~Smirnova et al., ``Organoid Intelligence (OI): The New Frontier in Biocomputing and Intelligence-in-a-Dish,'' \textit{Frontiers in Science}, vol.~1, 2023.
+
+\item B.~Kagan et al., ``In vitro neurons learn and exhibit sentience when embodied in a simulated game-world,'' \textit{Neuron}, vol.~110, no.~23, pp.~3952--3969, 2022.
+
+\end{enumerate}
+
+\vspace{0.6em}
+\noindent\rule{\textwidth}{0.4pt}
+
+\begin{center}
+\itshape Note from Fox: The best computer is the human brain at virtually no cost of processing power.\\[0.6em]
+\upshape\textbf{GreyFox}\\[0.3em]
+\itshape Jibaro Archives, 2026\\[0.5em]
+\itshape\color{gray!50!black} I'm overwhelmed, so out of my depth, and yet so intrigued.
+\end{center}
+
+\end{document}

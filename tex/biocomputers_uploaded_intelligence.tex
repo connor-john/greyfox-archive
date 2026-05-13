@@ -1,0 +1,210 @@
+% =====================================================================
+% Biocomputers and Uploaded Intelligence -- GreyFox, Jibaro Archives, 2026
+% Transcribed from screenshots into LaTeX
+% =====================================================================
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1.15in]{geometry}
+% microtype expansion needs scalable fonts; disable expansion, keep protrusion
+\usepackage[protrusion=true,expansion=false]{microtype}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{ragged2e}
+\usepackage[hidelinks,
+            colorlinks=true,
+            linkcolor=black,
+            citecolor=teal!70!black,
+            urlcolor=teal!70!black]{hyperref}
+
+% --- Title / section styling -----------------------------------------
+\titleformat{\section}{\large\bfseries}{\thesection}{0.8em}{}
+\titlespacing*{\section}{0pt}{1.6em}{0.6em}
+
+% Slightly tighter quote
+\renewenvironment{quote}
+  {\list{}{\leftmargin=2.2em\rightmargin=2.2em\topsep=0.4em\parsep=0.3em}%
+   \item\relax\itshape}
+  {\endlist}
+
+% Attribution line under a pull quote
+\newcommand{\attrib}[1]{\par\vspace{0.2em}\normalfont\small\hspace*{0em}--\ #1\par}
+
+\setlength{\emergencystretch}{2em}
+
+\begin{document}
+
+% =====================================================================
+% Title block
+% =====================================================================
+\begin{center}
+{\LARGE\bfseries BIOCOMPUTERS AND UPLOADED INTELLIGENCE}\\[1.0em]
+{\itshape\large Doing webpages and making apps is not Computer Science,\\
+but a consequence and discipline in the very broad field of Computation}\\[1.2em]
+{\itshape A collection of private note fragments, gathered and completed from GreyFox's Notebook}\\[0.3em]
+Shared for Jibaro Archives, marked by IIX.\\[0.2em]
+{\small\color{gray!60!black} 2026 \ //\ Open Classification}
+\end{center}
+
+\vspace{0.5em}
+\noindent\rule{\textwidth}{1.2pt}
+\vspace{0.4em}
+
+% =====================================================================
+% Abstract
+% =====================================================================
+\begin{center}
+\textbf{\large ABSTRACT}
+\end{center}
+
+The question of whether a human brain can be mapped, transferred, and executed on non-biological hardware is no longer confined to science fiction. It is an active area of formal research with documented milestones, published roadmaps, and working platforms already running biological neural tissue in computational loops. This paper documents what has actually been achieved: which organisms have been fully mapped, which platforms are currently executing biological neurons, and which computational algorithms researchers have identified as candidates for simulating neural activity with sufficient integrity. No claim is made here beyond what has been formally published.
+
+\vspace{0.4em}
+\noindent\rule{\textwidth}{0.4pt}
+
+% =====================================================================
+% 1
+% =====================================================================
+\section{What Has Been Mapped: The Connectome Record}
+
+The connectome is the complete map of a nervous system's neural wiring: every neuron, every synapse, every connection. Producing one requires electron microscopy at synaptic resolution, computational reconstruction, and annotation of cell types. As of 2024, complete connectomes have been produced for five organisms, ranging from a 302-neuron nematode to a 140,000-neuron adult fly brain.
+
+The first complete nervous system connectome was published in 1986 by White, Southgate, Thomson, and Brenner: a full map of \textit{C.~elegans}, a nematode with 302 neurons.~[1] By 2023, complete connectomes existed for four organisms: \textit{C.~elegans}, the tadpole larva of \textit{Ciona intestinalis}, the marine annelid \textit{Platynereis dumerilii}, and the \textit{Drosophila} larva. The last of these was published that year by Winding et al.\ in \textit{Science}, comprising 3,016 neurons and 548,000 synapses.~[2]
+
+In 2024, the connectome of an entire adult \textit{Drosophila} brain was published by Dorkenwald et al., covering approximately 140,000 neurons and tens of millions of synapses, with annotations of cell types and predicted neurotransmitter identities.~[3] This is the largest complete adult brain connectome produced to date. On the mammalian side, a dataset released in 2025 by the MICrONS Consortium spans approximately one cubic millimeter of mouse visual cortex, integrating functional imaging of tens of thousands of neurons with electron microscopy reconstruction containing hundreds of thousands of cells and approximately half a billion synapses.~[4] It is not a complete brain. It is a grain of sand. But it is a grain of sand at synaptic resolution.
+
+% =====================================================================
+% 2
+% =====================================================================
+\section{What Is Already Running: Biocomputing Platforms}
+
+Mapping a connectome and executing it are two different problems. Several platforms are currently attempting the second.
+
+FinalSpark's Neuroplatform, operational as of 2024, connects living human cortical organoids to multi-electrode arrays that allow both electrical stimulation and recording.~[5] Organoids are clusters of lab-grown neurons derived from human stem cells that self-organize into layered structures resembling cortical tissue. The platform uses them as wetware processing units: biological tissue performing computational tasks in response to electrical input, with outputs read out digitally.
+
+Cortical Labs demonstrated in 2022 that cortical neurons cultured on a multi-electrode array could learn to play a simplified version of Pong through closed-loop electrophysiological feedback, without being pre-programmed with the game's rules.~[6] The neurons adapted their firing patterns in response to stimulation encoding the game state. The system learned from experience in a measurable behavioral sense.
+
+These platforms do not emulate a whole brain. They demonstrate that biological neural tissue can be kept alive outside the skull, interfaced with digital hardware, and made to produce computationally meaningful outputs. That is the engineering foundation on which any future emulation effort would have to build.
+
+% =====================================================================
+% 3
+% =====================================================================
+\section{The Roadmap: What Uploading Would Require}
+
+In 2008, Anders Sandberg and Nick Bostrom published the most comprehensive formal analysis of whole brain emulation to date, produced through a workshop of invited experts at the Future of Humanity Institute, Oxford University.~[7] The report identified three core technical requirements: scanning, translation, and simulation.
+
+Scanning: a method to record the full structure of a brain at sufficient resolution to capture the information that determines its function. The report noted that the required resolution depends on what level of neural detail is actually necessary to reproduce behavior, which remains an open empirical question.
+
+Translation: converting a structural scan into a computational model. This requires determining which features of the scan are functionally relevant and which can be abstracted away without loss of integrity.
+
+Simulation: running the model on hardware at a speed and scale sufficient to produce real-time behavior. The State of Brain Emulation Report 2025 notes that a single modern GPU can simulate approximately 0.5 to 1 million neurons, with memory rather than compute as the primary bottleneck. A human brain simulation would require large-scale clusters comparable to those used to train frontier AI systems.~[8]
+
+The broader WBE research literature also identifies embodiment as a requirement: providing the emulated system with sensory input and motor output so that it can interact with an environment, since neural activity in biological brains is not self-contained but continuously shaped by the body and world it operates in.
+
+\begin{quote}
+``The basic idea is to take a particular brain, scan its structure in detail, and construct a software model of it that is so faithful to the original that, when run on appropriate hardware, it will behave in essentially the same way as the original brain.''
+\attrib{Sandberg, A.\ and Bostrom, N.\ --- Whole Brain Emulation: A Roadmap, 2008~[7]}
+\end{quote}
+
+% =====================================================================
+% 4
+% =====================================================================
+\section{Candidate Algorithms for Neural Integrity}
+
+No algorithm currently exists that can execute a human brain map with verified integrity. What does exist is a set of formally published computational models of neural activity that researchers have identified as the most plausible building blocks for such a system. These are not speculation. They are documented methods already in use in computational neuroscience.
+
+The Hodgkin--Huxley model, published in 1952 and awarded the Nobel Prize in Physiology or Medicine in 1963, is the foundational algorithm for simulating how individual neurons generate and propagate electrical signals.~[9] It expresses the ionic mechanisms of the action potential as a set of nonlinear differential equations governing sodium and potassium conductances across the cell membrane. It is the most biologically accurate single-neuron model in widespread use and the baseline against which all simplified models are validated.
+
+\begin{quote}
+``The best computer is the human brain at virtually no cost of processing power.''
+\attrib{GreyFox}
+\end{quote}
+
+The Integrate-and-Fire model is a computationally efficient simplification that captures the threshold-and-fire behavior of a neuron without modeling the full ionic dynamics. It accumulates input until a threshold is crossed and fires, then resets. Its reduced computational cost makes it practical for large-scale network simulations where full Hodgkin--Huxley integrity at every neuron would be prohibitive.~[10]
+
+The NEST and NEURON simulators are the primary software platforms currently used for large-scale neural network simulation. Both implement variants of these models and have been used in the Blue Brain Project and related efforts. The Sandberg--Bostrom roadmap describes a hierarchy of simulation levels, from simple rate models up through full electrophysiological models with protein concentrations and gene expression.~[7] Higher integrity requires exponentially more data and compute.
+
+Whether any of these algorithms, or combinations of them, would be sufficient to preserve the functional integrity of an uploaded brain map remains an open question. The State of Brain Emulation Report 2025 draws a formal distinction between simulation and emulation: simulation matches outputs, emulation reproduces the causal machinery.~[8] No current system has demonstrated emulation by that definition for any organism above \textit{C.~elegans}.
+
+\begin{quote}
+``Brain emulation needs to take chemistry more into account than commonly occurs in current computational models. Chemical processes inside neurons have computational power on their own and occur on a vast range of timescales, from sub-millisecond to weeks.''
+\attrib{Sandberg, A.\ and Bostrom, N.\ --- Whole Brain Emulation: A Roadmap, 2008~[7]}
+\end{quote}
+
+% =====================================================================
+% 5
+% =====================================================================
+\section{Where the Field Stands}
+
+What has been achieved is documented above. Complete connectomes exist for five organisms: \textit{C.~elegans}, \textit{Ciona intestinalis} larva, \textit{Platynereis dumerilii}, \textit{Drosophila} larva, and adult \textit{Drosophila}. Partial mammalian cortical reconstruction exists at synaptic resolution. Living human neural tissue is being interfaced with digital hardware in real time. Computational models for simulating neural activity at multiple levels of integrity are published, validated, and in active use.
+
+What has not been achieved is whole brain emulation of any mammal, and certainly not of a human. The State of Brain Emulation Report 2025 states directly that there is not yet sufficient physiological data or computational capacity for human-scale implementation.~[8] The primary limiting factor is identified as data: more and higher-quality experimental data, not hardware or algorithms.
+
+The algorithms needed for neural integrity in an emulation context exist in published form. The connectome data exists for small organisms. The hardware platforms for interfacing with biological neural tissue exist. What does not yet exist is a method to integrate all three at the scale of a human nervous system. That gap is empirical and engineering, not conceptual.
+
+\begin{quote}
+``Success or failure, it seems inevitable, that's where we're headed. I don't know what I'm doing at this point, I don't know what will come out of all of this.''
+\attrib{GreyFox}
+\end{quote}
+
+% =====================================================================
+% 6
+% =====================================================================
+\section{Conclusion}
+
+The research documented here was not produced in anticipation of a specific technological outcome. It was produced by neurophysiologists, computational neuroscientists, and bioengineers working on tractable problems in their respective fields. The connectome of \textit{C.~elegans} was mapped to understand a nervous system. The Hodgkin--Huxley model was derived to explain an action potential. The DishBrain experiment was designed to test whether cultured neurons could exhibit adaptive behavior. None of these efforts set out to upload a human mind.
+
+Taken together, however, they constitute a documented chain of progress toward the technical prerequisites that whole brain emulation would require. The algorithms for neural simulation are published. The platforms for biological-digital interfacing exist. The connectome data is expanding from 302 neurons to 140,000 and beyond. Whether these constitute a path to something like uploaded intelligence is not a question this paper answers. It is a question the literature itself has begun to ask.
+
+\begin{quote}
+``Time will tell.''
+\attrib{GreyFox's Electrical Engineering Professor}
+\end{quote}
+
+\vspace{0.4em}
+\noindent\rule{\textwidth}{0.4pt}
+
+% =====================================================================
+% References
+% =====================================================================
+\section*{REFERENCES}
+\addcontentsline{toc}{section}{References}
+
+\begin{enumerate}
+\setlength{\itemsep}{0.35em}
+
+\item J.~G. White, E.~Southgate, J.~N. Thomson, and S.~Brenner, ``The structure of the nervous system of the nematode \textit{Caenorhabditis elegans},'' \textit{Philosophical Transactions of the Royal Society B}, vol.~314, pp.~1--340, 1986.
+
+\item M.~Winding et al., ``The connectome of an insect brain,'' \textit{Science}, vol.~379, no.~6636, eadd9330, 2023.
+
+\item S.~Dorkenwald et al., ``Neuronal wiring diagram of an adult brain,'' \textit{Nature}, vol.~634, pp.~1085--1089, 2024.
+
+\item MICrONS Consortium et al., ``Functional connectomics spanning multiple areas of mouse visual cortex,'' \textit{Nature}, vol.~640, pp.~1--18, 2025.
+
+\item L.~Smirnova et al., ``Organoid Intelligence (OI): The New Frontier in Biocomputing and Intelligence-in-a-Dish,'' \textit{Frontiers in Science}, vol.~1, 2023.
+
+\item B.~Kagan et al., ``In vitro neurons learn and exhibit sentience when embodied in a simulated game-world,'' \textit{Neuron}, vol.~110, no.~23, pp.~3952--3969, 2022.
+
+\item A.~Sandberg and N.~Bostrom, \textit{Whole Brain Emulation: A Roadmap}, Technical Report \#2008-3. Future of Humanity Institute, University of Oxford, 2008.
+
+\item Brain Emulation Initiative, \textit{State of Brain Emulation Report 2025}. 2025.
+
+\item A.~L. Hodgkin and A.~F. Huxley, ``A quantitative description of membrane current and its application to conduction and excitation in nerve,'' \textit{Journal of Physiology}, vol.~117, pp.~500--544, 1952.
+
+\item W.~Gerstner and W.~M. Kistler, \textit{Spiking Neuron Models: Single Neurons, Populations, Plasticity}. Cambridge: Cambridge University Press, 2002.
+
+\end{enumerate}
+
+\vspace{0.6em}
+\noindent\rule{\textwidth}{0.4pt}
+
+\begin{center}
+\itshape Note from Fox: The best computer is the human brain at virtually no cost of processing power.\\[0.6em]
+\upshape\textbf{GreyFox}\\[0.3em]
+\itshape Jibaro Archives, 2026
+\end{center}
+
+\end{document}
