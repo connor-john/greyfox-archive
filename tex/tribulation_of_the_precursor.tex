@@ -1,0 +1,682 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=black
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\small Tribulation of the Precursor}
+\lhead{\small GreyFox's Notebook --- Jbaro Archives}
+\rfoot{\thepage}
+
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+
+\setlength{\parskip}{0.6em}
+\onehalfspacing
+
+\begin{document}
+
+%--- Title block ---
+\begin{center}
+    {\LARGE\bfseries EXCERPT FROM}\\[0.4em]
+    {\LARGE\bfseries TRIBULATION OF THE PRECURSOR}\\[1em]
+    {\normalsize\itshape Doing webpages and making apps is not Computer Science,\\
+    but a consequence and discipline in the very broad field of Computation}\\[1.5em]
+    {\small Summary extract of the collection of private note fragments,\\
+    gathered and completed from GreyFox's Notebook}\\[1em]
+    {\small Shared for Jbaro Archives, marked by IIX.\\
+    January to March 2026\\
+    2026 // Open Classification}
+\end{center}
+
+\vspace{1.5em}
+\hrule
+\vspace{1.5em}
+
+%--- Abstract ---
+\begin{center}
+    {\bfseries ABSTRACT}
+\end{center}
+
+Four components of a single inquiry, developed across the period January to March 2026.
+\textit{Biocomputers and Uploaded Intelligence} documents the engineering state of the field:
+which GPUs have been mapped, which platforms are running biological neural tissue, which algorithms
+exist and where they fall short. \textit{The Algorithm of Who We Are} formalizes the identity system
+that must remain stable in any emulation attempt for the result to remain the same person, expressed
+as a system of differential equations, a fixed-point operator, and an optimal transport condition.
+\textit{Computer Science} establishes the epistemic identity and core discipline CS is and why it is
+the one that has to solve this. \textit{How Computer Science Borrowed from Neuroscience} traces the
+chain of debt from McCulloch in 1943 to the present day.
+
+This excerpt summarizes each component and documents where they bear directly on each other,
+including where findings reinforce or contradict one another. No new claims are made. All references
+are taken from the source notebooks without modification.
+
+\vspace{1.5em}
+\hrule
+\vspace{1.5em}
+
+%=============================================================
+\section{Biocomputers and Uploaded Intelligence}
+%=============================================================
+
+The central constraint of the field is stated at the outset: mapping a connectome and executing it
+are two different problems. The connectome alone is not a nervous system: emulating every neuron,
+every synapse, every connection. Producing one requires electron microscopy at synaptic resolution,
+computational reconstruction, and annotation of cell types. As of 2024, complete connectomes exist
+for five organisms. The first was \textit{C.\ elegans}, a nematode with 302 neurons, mapped in 1986
+by White, Southgate, Thomson, and Brenner~\cite{Bio-1}. By 2023, complete connectomes existed for
+four organisms: \textit{C.\ elegans}, the tadpole larva of \textit{Ciona intestinalis}, the marine
+annelid \textit{Platynereis dumerilii}, and the \textit{Drosophila} larva; the last comprising 3,016
+neurons and 548,000 synapses, published by Winding et al.\ in \textit{Science}~\cite{Bio-2}. In
+2024, the connectome of an entire adult \textit{Drosophila} brain was published by Dorkenwald et al.:
+approximately 140,000 neurons and tens of millions of synapses, annotated by cell type and predicted
+neurotransmitter identity~\cite{Bio-3}. This is the largest complete adult brain connectome produced
+to date.
+
+On the mammalian side, a dataset released in 2025 by the MICrONS Consortium spans approximately one
+cubic millimeter of mouse visual cortex, integrating functional imaging of tens of thousands of
+neurons with electron microscopy reconstruction containing hundreds of thousands of cells and
+approximately half a billion synapses~\cite{Bio-4}. It is not a complete brain. It is a grain of
+sand. But it is a grain of sand at synaptic resolution. The scale gap is not a rounding error. It is
+the central engineering problem of the field.
+
+Several platforms are currently attempting the execution side of this problem. FinalSpark's
+Neuroplatform, operational as of 2024, connects living human cortical organoids to multi-electrode
+arrays that allow both electrical stimulation and recording~\cite{Bio-5}. Organoids are clusters of
+lab-grown neurons derived from human stem cells that self-organize into layered structures resembling
+cortical tissue. Cortical Labs demonstrated in 2022 that cortical neurons cultured on a
+multi-electrode array could learn to play a simplified version of Pong using electrophysiological
+feedback, without being pre-programmed with the game's rules~\cite{Bio-6}. The neurons adapted their
+firing patterns in response to stimulation encoding the game state. The system learned from
+experience in a measurable behavioural sense. These platforms do not emulate a whole brain. They
+demonstrate that biological neural tissue can be kept alive outside the skull, interfaced with digital
+hardware, and made to produce computationally meaningful outputs. That is the engineering foundation
+on which any future emulation effort would have to build.
+
+The Sandberg--Bostrom roadmap from 2008, produced through a workshop of invited experts at the Future
+of Humanity Institute, Oxford University, identified three core technical requirements for whole brain
+emulation: scanning the brain at sufficient resolution to capture the information that determines its
+function; translation (converting a structural scan into a computational model, determining which
+features are functionally relevant); and simulation (running the model on hardware at a speed and
+scale sufficient to produce real-time behaviour)~\cite{Bio-7}. The LOBE research literature also
+identifies embodiment as a formal requirement: providing the emulated system with sensory input and
+motor output so it can interact with an environment.
+
+The 2025 State of Brain Emulation Report draws the critical formal distinction between simulation and
+emulation: simulation matches outputs, emulation reproduces the causal machinery~\cite{Bio-8}. No
+current system has demonstrated emulation by that definition for any organism above \textit{C.\
+elegans}. The Blue Brain Project ran from 2005 to December 2024 under Henry Markram at EPFL, with the
+objective of building a biologically detailed computational model of the neocortical column of a
+rat~\cite{Bio-7}. Nineteen years on supercomputing resources. The result was electrophysiological
+simulation. Not emulation by Zanichelli's definition.
+
+The distinction between simulation and emulation is not pedantic. It is the precise boundary between
+the two questions these materials are asking. The Sandberg--Bostrom roadmap, written in 2008,
+anticipated this distinction and stated it clearly. Seventeen years later, no system has crossed from
+simulation to emulation for any organism above 302 neurons.
+
+The candidate algorithms for neural simulation exist in published form. The Hodgkin--Huxley model,
+published in 1952 and awarded the Nobel Prize in Physiology or Medicine in 1963, is the foundational
+algorithm for simulating how individual neurons generate and propagate electrical signals~\cite{Bio-9}.
+It expresses the firing mechanism of the action potential as a system of nonlinear differential
+equations governing sodium and potassium conductances across the cell membrane. The
+Integrate-and-Fire model (Lapicque 1907) is a useful simplification that captures the
+threshold-and-fire behaviour without modelling the full ionic dynamics~\cite{Bio-10}. The
+Sandberg--Bostrom roadmap describes a hierarchy of simulation levels, from simple rate models up
+through full electrophysiological models with protein concentrations and gene expression: higher
+integrity requires exponentially more data and compute~\cite{Bio-7}. A single modern GPU can simulate
+approximately 0.5 to 1 million neurons, with memory rather than compute as the primary
+bottleneck~\cite{Bio-8}. The primary limiting factor is identified as data, not hardware or
+algorithms.
+
+\begin{displayquote}
+\itshape
+``Brain emulation needs to take chemistry more into account than commonly occurs in current
+computational models. Chemical processes inside neurons have computational power on their own and
+occur on a vast range of timescales, from sub-millisecond to weeks.''\\
+\upshape --- Sandberg and Bostrom, \textit{Whole Brain Emulation: A Roadmap}, 2008~\cite{Bio-7}
+\end{displayquote}
+
+%=============================================================
+\section{The Algorithm of Who We Are}
+%=============================================================
+
+This component begins where Biocomputers stops. Connectome data and simulation algorithms address the
+structural problem. They do not address the integrity problem: what would need to be preserved for the
+result to still be the same person? The component formalises identity as a five-variable system:
+
+\begin{equation}
+\mathrm{Identity}(p,\,t) \;:=\; \{\, A(p,t),\; R(p),\; C(p),\; S(p,t),\; M(p,t) \,\}
+\end{equation}
+
+where $A$ is attachment state, $R$ is recursive self-reference, $C$ is consciousness, $S$ is the
+social network, and $M$ is the autobiographical self. Each has a formal representation grounded in
+published research. Each raises a specific open question for the upload scenario.
+
+\subsection*{Attachment (A)}
+
+$A$ is the attachment state. Bowlby's 1969 monograph \textit{Attachment} establishes that the
+attachment system is not a learned response to secondary drive but a primary motivational system with
+its own neural architecture~\cite{Alg-1}. The neurochemical substrate was documented by Insel and
+Young in 2001: oxytocin and vasopressin are the primary mediators of social attachment, operating
+through reward circuitry in the nucleus accumbens and ventral tegmental area~\cite{Alg-2}. Fisher,
+Aron, and Brown confirmed in 2005 that early-stage romantic love produces a measurable, reproducible
+neural signature in the caudate nucleus and VTA, consistent across subjects and distinct from sexual
+arousal~\cite{Alg-3}. The governing equation for $A$:
+
+\begin{equation}
+\frac{dA}{dt} \;=\; \lambda_{\mathrm{form}} \cdot B(p,t) \cdot [\mathrm{OXT}](p,t)
+               \;-\; \lambda_{\mathrm{decay}} \cdot A(t)
+               \;-\; \delta(p,t) \cdot A(t)
+\end{equation}
+
+where $B(p,t)$ is the dyadic bond function, $[\mathrm{OXT}]$ is oxytocin concentration, and $\delta$
+is an external disruption term. When $B(p,t) \to 0$ (the death of an attached person), the equation
+reduces to:
+
+\begin{equation}
+\frac{dA}{dt} \;=\; -(\lambda_{\mathrm{decay}} + \delta)\,A(t)
+\quad\Longrightarrow\quad
+A(t) \;=\; A_0\,e^{-(\lambda+\delta)\,t}
+\end{equation}
+
+Grief as exponential decay with time constant $\tau = 1/(\lambda+\delta)$. The second-order extension
+captures the dynamics of building and fading bonds over time:
+
+\begin{equation}
+\frac{d^2A}{dt^2} \;=\; \lambda_{\mathrm{form}}\!\left(\beta_1\,\frac{dB}{dt}
+    + \beta_2\,\frac{d[\mathrm{OXT}]}{dt}\right)
+    \;-\; \lambda_{\mathrm{decay}}\,\frac{dA}{dt}
+\end{equation}
+
+\subsection*{Recursive self-reference (R)}
+
+$R$ is recursive self-reference, formalised as a fixed-point problem on the Hilbert space of
+cognitive states. Hofstadter's argument in \textit{G\"{o}del, Escher, Bach} (1979) and \textit{I Am
+a Strange Loop} (2007) is that the self is not a thing inside the brain but a process the brain runs:
+the process of modelling itself as an object in its own cognitive field~\cite{Alg-4,Alg-5}. The
+formal statement:
+
+\begin{equation}
+R^*(p) \;=\; F[R^*(p)]
+\end{equation}
+
+where $F: L^2(\Omega) \to L^2(\Omega)$ and $\|F(R_1) - F(R_2)\| \leq k\,\|R_1 - R_2\|$,\; $k < 1$.
+By the Banach fixed-point theorem, a unique fixed point $R^*$ exists and the iteration
+$R_{n+1} = F(R_n)$ converges to it from any starting point. The candidate form for the cognitive
+update operator is:
+
+\begin{equation}
+F[R](x) \;=\; \int_0^t K(x,x')\,R(x')\,dx' \;+\; \eta(x,\,A(p,t),\,M(p,t))
+\end{equation}
+
+where $K(x,x')$ is an attention kernel over the cognitive state space, and $\eta$ is external input
+from the attachment and autobiographical memory components. $F$ is a contraction if the operator norm
+of $K$ is less than one. Open questions from the notebook: Is $R^*$ unique for each person? Does the
+Lipschitz constant $k$ vary with trauma? If the substrate changes at iteration $n$, does the sequence
+still converge to the same $R^*$?
+
+\subsection*{Consciousness (C)}
+
+$C$ is consciousness, formalised via Tononi's Integrated Information Theory~\cite{Alg-8}:
+
+\begin{equation}
+\Phi(X) \;:=\; \min_{M_k \in P(X)}\; \mathrm{EI}(X \mid M_k)
+           \;-\; H(X_t \mid X_{t-1})
+           \;-\; H(X_{t-1} \mid X_{M_k})
+\end{equation}
+
+$\Phi = 0$ means the system is fully decomposable with no integrated information. $\Phi > 0$ means
+irreducible causal structure. Whether any non-biological substrate running a brain map instantiates
+the same causal relationships is an open current research question. Baars' Global Workspace theory
+(1988) provides a complementary architectural constraint: consciousness requires information to be
+broadcast across a global workspace simultaneously available to a wide range of cognitive
+processes~\cite{Alg-9}. Chalmers' hard problem (1995) is the deepest obstruction: even after all
+functional problems are solved, no test currently exists that can be applied to a candidate upload and
+return a reliable answer about whether it is conscious~\cite{Alg-7}.
+
+\subsection*{Social network (S)}
+
+$S$ is the social network, modelled as a weighted graph with Laplacian dynamics:
+
+\begin{equation}
+i\hbar\,\frac{\partial w_{ij}}{\partial t}
+    \;=\; \gamma \cdot \mathrm{interaction}(i,j,t) \;-\; \mu \cdot w_{ij}(t)
+\end{equation}
+
+The graph Laplacian $L = D - W$ yields the Fiedler value $\lambda_2(L)$, algebraic connectivity,
+measuring social cohesion. Piolatto et al.\ 2022 confirmed that social isolation worsens cognitive
+outcomes through combined mechanisms associated with measurable cognitive decline~\cite{Alg-10}.
+Post-upload, old edges freeze or decay: $dw_{ij}/dt = -\mu\,w_{ij}(t)$. The network collapses.
+
+\subsection*{Autobiographical self (M)}
+
+$M$ is the autobiographical self, formalised as a convolution integral over episodic memory, body
+state, and experience:
+
+\begin{equation}
+M(p,t) \;=\; \int_0^t K(t,\tau)\,\bigl[\,\mathrm{mem}(p,\tau)
+           + \mathrm{body}(p,\tau) + \mathrm{exp}(p,\tau)\,\bigr]\,d\tau
+\end{equation}
+
+with exponential decay kernel $K(t,\tau) = e^{-\lambda(t-\tau)}$, following the Markov property. The
+notebook raises the alternative of a power-law kernel $K \sim (t-\tau)^{-\alpha}$ for long-range
+memory. Which kernel is cognitively faithful is an open question with direct computational
+implications.
+
+\subsection*{Identity as trajectory}
+
+The identity-as-trajectory formulation is stated explicitly in the source:
+
+\begin{equation}
+p(t+dt) \;=\; p(t) \;+\; \frac{dp}{dt}\,dt \;+\; \mathcal{O}(dt^2)
+\end{equation}
+
+where $dp/dt = f(A, R, C, S, M, \mathrm{env}(t))$. Identity is a trajectory through state space,
+not a point. Uploading copies a snapshot at $t_{\mathrm{upload}}$, not a trajectory. The formal
+integrity condition:
+
+\begin{equation}
+\mathrm{Integrity}(p_{\mathrm{upload}}) \;:=\; \mathrm{True}
+\;\;\text{iff}\;\;
+W_2(\mu_{\mathrm{upload}},\, \mu_{\mathrm{orig}}) \;\leq\; \varepsilon
+\end{equation}
+
+where $W_2$ is the Wasserstein-2 distance, the minimum cost of transporting one probability
+distribution over the identity state space into another. The upload problem is an optimal transport
+problem. $W_2 = 0$ requires perfect transport. By the continuity of $W_2$ and the irreversibility of
+substrate change, $L > 0$ almost surely. The total loss:
+
+\begin{equation}
+L_{\mathrm{total}} \;=\;
+    w_A L_A + w_R L_R + w_C L_C + w_S L_S + w_M L_M
+\end{equation}
+
+where $L_x = \|x(p_{\mathrm{upload}},t) - x(p_{\mathrm{orig}},t)\|_2$ and the weights $w_x$ are
+unknown.
+
+\begin{displayquote}
+\itshape
+``The equations in these pages are not solutions. They are the shape of the problem, written down so
+someone can see it clearly. The connectome gives us the wiring. It does not give us the loop, the
+bond, or the light inside.''\\
+\upshape --- Algorithm of Who We Are, conclusion
+\end{displayquote}
+
+%=============================================================
+\section{Computer Science}
+%=============================================================
+
+This component establishes the epistemological ground for the entire inquiry: what kind of discipline
+CS is, and why the upload problem belongs to it. The argument is that CS occupies a historically
+novel position among formal disciplines---simultaneously mathematics, engineering, and empirical
+science---as the direct consequence of one structural property that no other formal discipline
+possesses at scale.
+
+CS began as formal mathematics. In 1936, Alan Turing published \textit{On Computable Numbers} and
+defined a machine that existed only on paper, asking what it could in principle compute~\cite{CS-1}.
+Alongside Turing, Alonzo Church developed lambda calculus~\cite{CS-2} and John von Neumann
+formalised stored-program architecture~\cite{CS-3}. These were mathematicians drawing boundaries
+around a new formal object: computation itself. The name Computer Science was an institutional
+accident, applied when universities needed to house a department that fit neither Mathematics nor
+Engineering exactly.
+
+The property that changed everything: the Turing machine, a purely theoretical construct, has a
+direct physical realisation in the transistor, the chip, the processor. When CS produces a formal
+system, that system can be executed. The abstraction does not merely describe a process. It becomes
+the process. No other formal discipline has this execution property at scale. The chain runs: logic to
+circuit to code to model to body to action.
+
+When CS borrowed the McCulloch--Pitts model and built the Perceptron from it~\cite{CS-4,CS-5}, it
+inherited the empirical assumptions of that model. Neural networks are not proven correct through
+formal proof. They are validated through testing against data from the real world. When the network
+gets a body mounted in a robot with cameras, force sensors, and actuators, the system must be tested
+empirically, against the resistance of the real world~\cite{CS-6}. The world pushes back. That is the
+defining feature of empirical science.
+
+CS therefore occupies all three categories of rigorous knowledge simultaneously. It is mathematics
+when it produces formal proofs about algorithms and computability. It is engineering when it builds
+systems that must function under real-world physical constraints. It is empirical science when it
+trains models on data and validates them against observable reality. That triple nature is the source
+of its extraordinary reach: and it is what makes the upload problem a CS problem. Only CS can attempt
+to run a brain map. Only CS has the execution property that would make the attempt more than
+theoretical.
+
+\begin{displayquote}
+\itshape
+``Where would memories go? It becomes a philosophical problem.''\\
+\upshape --- GreyFox's Electrical Engineering Professor
+\end{displayquote}
+
+%=============================================================
+\section{How Computer Science Borrowed from Neuroscience}
+%=============================================================
+
+This component traces the historical chain by which CS arrived at the upload frontier. The chain
+begins not with an engineer but with two neurophysiologists. In 1943, Warren McCulloch and Walter
+Pitts published a paper attempting to describe, in formal logical terms, how a biological neuron
+produces an output from its inputs~\cite{Bor-1}. Their answer: the neuron is, in functional terms, a
+threshold gate. This was a description of neuroscience, not a proposal for engineering. The paper was
+published in the \textit{Bulletin of Mathematical Biophysics}. It was read by engineers.
+
+Frank Rosenblatt at the Cornell Aeronautical Laboratory was one of them. In 1958 he took the
+McCulloch--Pitts model and built physical hardware from it~\cite{Bor-2}. The Perceptron received
+multiple weighted input signals, summed them, and fired an output when the sum exceeded a threshold.
+The design was not derived from mathematical principles of computation. It was lifted directly from
+the neurophysiological description of nerve cells. The vocabulary of training, borrowed from animal
+learning research, entered CS. The vocabulary of neuroscience followed the hardware into the field
+and stayed there.
+
+Minsky and Papert (1969) showed a single-layer perceptron could not solve problems that were not
+linearly separable, including the simple XOR operation~\cite{Bor-3}. Funding for connectionist
+research largely collapsed through the 1970s. In the 1980s, Rumelhart, Hinton, and Williams
+formalised backpropagation: error signals propagated backward through multiple layers, adjusting
+weights at each level proportionally~\cite{Bor-4}. The borrowed unit could now be stacked. By the
+2010s, deep networks trained on large datasets and run on GPU hardware were outperforming every prior
+approach in image recognition, speech recognition, and machine translation~\cite{Bor-5}. Each layer
+remained, structurally, a population of threshold units derived from the McCulloch--Pitts neuron.
+
+The Human Connectome Project, NIH-funded since 2009, has been working to chart the structural and
+functional connectivity of the human brain using diffusion MRI and functional
+neuroimaging~\cite{Bor-6}. FinalSpark's Neuroplatform connects living human cortical organoids to
+electrodes for both recording and stimulation~\cite{Bor-8}. DishBrain neurons learned Pong from
+feedback without pre-programmed rules~\cite{Bor-9}. These programs close the loop: the direction is
+now bidirectional.
+
+Large language models trained on human-generated text were trained on essentially the entire recorded
+output of human language and thought. The architecture is biological in origin. The training signal
+is human in origin. The result is a system whose outputs were shaped at every stage by something that
+came from outside computer science.
+
+\begin{displayquote}
+\itshape
+``Maybe it's almost as if we are trying to mirror ourselves and something is reflecting back?''\\
+\upshape --- GreyFox
+\end{displayquote}
+
+%=============================================================
+\section{Where the Components Connect}
+%=============================================================
+
+These are not four independent arguments. They are one argument approached from four angles, and
+reading them together surfaces connections that none of them resolve alone. Several of these
+connections constitute direct conflicts or complications that change the meaning of each component
+when read in isolation.
+
+The simulation--emulation distinction from Biocomputers~\cite{Bio-8} cuts directly against the $A$
+integrity condition from the Algorithm component. The integrity condition is stated as a
+Wasserstein-2 distance over identity distributions: $W_2(\mu_{\mathrm{upload}},\mu_{\mathrm{orig}})
+\leq \varepsilon$. This metric measures the cost of transporting one probability distribution over
+behavioural and cognitive states into another. It is the right metric for identity-as-distribution.
+It is not the right metric for identity-as-causal-process. A system can match output distributions
+while failing the emulation condition.
+
+The Algorithm component's loss function treats $L_A$ and $L_S$ as independent terms with unknown
+weights. The neurobiology cited within the same component does not support this independence. Insel
+and Young~\cite{Alg-2} document that attachment state $A$ is mediated by oxytocin and vasopressin
+operating through the dopaminergic reward system. Piolatto et al.~\cite{Alg-10} document that social
+connectivity $S$ protects cognition through neuroprotective pathways overlapping with the
+neurobiological effects of exercise. Both $A$ and $S$ are mediated by the same neurochemical
+substrate. Post-upload, the social network $S$ decays as old edge weights follow $dw_{ij}/dt =
+-\mu\,w_{ij}$. As $S$ decays, the biological drivers of $A$ lose their input. $L_A$ and $L_S$ are
+coupled, not independent. The loss function as stated underestimates the damage that social graph
+collapse produces.
+
+The CS component establishes that the only verification method available for any built system is
+empirical testing~\cite{Bor-6}. There is a structural incompatibility between what needs to be
+verified and the verification framework CS makes available: Chalmers' hard problem~\cite{Alg-7} is
+not a philosophical curiosity in this context. It is a direct obstruction to the engineering
+verification of the upload.
+
+There is one further connection that reaches across all four components. The Borrowing component ends
+with the observation that large language models were trained on the recorded outputs of human minds.
+The CS component establishes that CS converts formal objects into systems instantiated in hardware.
+The Algorithm component asks what must be preserved for the upload to remain the same person. The
+Biocomputers component documents that we are already running human cortical tissue in computational
+loops outside the skull. Taken together: CS has been progressively importing more of the brain into
+its architecture, then the outputs of human minds, then its neurobiological tissue. The upload
+question is not a future scenario. It is the logical conclusion of a trajectory that has been
+underway since 1943.
+
+%=============================================================
+\section{The Borrowing Trajectory and What It Implies for Uploaded Intelligence}
+%=============================================================
+
+The borrowing pattern documented in \textit{How Computer Science Borrowed from Neuroscience} is
+toward the upload frontier without explicitly pursuing it. Each step borrowed more of the brain. The
+trajectory clarifies where the field actually stands with respect to uploaded intelligence.
+
+The McCulloch--Pitts neuron (1943) was the first loan: the firing behaviour of a single neuron,
+abstracted as a threshold gate~\cite{Bor-1}. Nothing about memory, identity, or consciousness was
+claimed or attempted. Rosenblatt's Perceptron (1958) borrowed the learning mechanism through which
+neural tissue adapts~\cite{Bor-2}. Backpropagation and the multilayer network (1986) borrowed the
+cortex's hierarchical architecture~\cite{Bor-4}. Deep learning scaled this to dimensions that have
+no biological analogue, running on datasets and compute resources orders of magnitude larger than
+anything biological~\cite{Bor-5}. Large language models trained on human-generated text borrowed
+something harder to characterise: the outputs of human cognition at scale. Whether the process of
+generating that output was captured is precisely the question the Algorithm component asks.
+
+Connectome mapping and biological computing platforms are attempting the next step: borrowing the
+wiring. The Human Connectome Project~\cite{Bor-6} maps structural and functional connectivity. The
+MICrONS dataset~\cite{Bio-4} reconstructs synaptic-resolution cortical structure. FinalSpark's
+Neuroplatform~\cite{Bio-5} and Cortical Labs' DishBrain~\cite{Bio-6,Bor-9} run biological neurons
+in computational loops. What is being borrowed at this stage: the actual neural architecture,
+connectivity, and tissue of biological brains---not a model of their outputs, but the thing itself.
+
+The progression is: behaviour of one cell, then its learning mechanism, then its hierarchical
+architecture, then the outputs of human minds, then the wiring and tissue. The upload would be the
+limit of this sequence: not a model of the brain, not a copy of its architecture, not a simulation of
+its behaviour, but the brain's causal machinery reproduced with sufficient fidelity that the
+Wasserstein-2 distance between the original and the instantiation is within a tolerable
+$\varepsilon$. That limit has not been reached. The sequence is ongoing. The direction has not
+changed.
+
+%=============================================================
+\section{What This Amounts To}
+%=============================================================
+
+The question of uploaded intelligence is not a philosophical thought experiment. It is a formal
+engineering problem with documented components, published roadmaps, working platforms, and a
+mathematically precise integrity condition.
+
+The hardware floor is known and expanding. Complete connectomes exist for five organisms up to
+140,000 neurons~\cite{Bio-3}. Mammalian cortical reconstruction exists at synaptic resolution for a
+cubic millimetre of mouse visual cortex~\cite{Bio-4}. Living human neural tissue is being interfaced
+with digital hardware in real time~\cite{Bio-5,Bio-6}. The simulation algorithms are published and in
+active use~\cite{Bio-9,Bio-10}. A single modern GPU can simulate 0.5 to 1 million neurons. The
+primary limiting factor is physiological data, not hardware or algorithms~\cite{Bio-8}.
+
+The integrity problem is formally stated. Identity is a five-dimensional trajectory through state
+space: attachment $A$, recursive self-reference $R$, consciousness $C$, social network $S$, and
+autobiographical self $M$. Three specific blocking problems remain unresolved. The chemistry problem:
+no current simulation framework models neurochemical dynamics---specifically the $[\mathrm{OXT}]$
+variable in the Algorithm's attachment equation---a data and modelling gap, not a hardware
+limitation~\cite{Bio-7}. The consciousness verification problem: $\Phi$ cannot be measured
+behaviourally, and the only verification method CS makes available is empirical behavioural
+testing~\cite{CS-6}. The trajectory problem: identity is a flow, not a snapshot. An upload captures
+a point on a trajectory. Whether the trajectory can restart on a new substrate and converge to the
+same attractor depends on whether $F$ is a transferable structural property or an emergent property of
+feedback dynamics---a question the DishBrain result~\cite{Bio-6,Bor-9} bears on but does not
+resolve.
+
+No current system satisfies the integrity condition. Not for any organism, and certainly not for a
+human. The Wasserstein distance between any uploaded mind and its original is greater than zero, and
+the tolerable $\varepsilon$ is not known, and neither is who would decide it, or whether the person
+on the other side of the upload would be the one who agreed to it. These are not philosophical
+complications added after the fact. They follow directly from the formal structure of the integrity
+condition as stated in the source material. These are what the mathematics says when you read it
+carefully.
+
+\begin{displayquote}
+\itshape
+``The equations in these pages are not solutions. They are the shape of the problem, written down so
+someone can see it clearly. The connectome gives us the loop, the bond, or the light inside.''
+\end{displayquote}
+
+\vspace{0.5em}
+{\small\itshape Source notebooks: Biocomputers and Uploaded Intelligence; The Algorithm of Who We
+Are; Computer Science; How Computer Science Borrowed from Neuroscience. All from GreyFox's private
+notebook, shared for Jbaro Archives, January to March 2026.}
+
+%=============================================================
+\newpage
+\section*{References}
+\renewcommand{\section}[2]{}% suppress auto-heading from thebibliography
+%=============================================================
+
+{\noindent\bfseries Biocomputers and Uploaded Intelligence}\par\smallskip
+\begin{thebibliography}{Bio-10}
+
+\bibitem[Bio-1]{Bio-1} J. G. White, E. Southgate, J. N. Thomson, and S. Brenner, ``The Structure
+    of the Nervous System of the Nematode \textit{C. elegans},'' \textit{Philosophical Transactions
+    of the Royal Society B}, vol. 314, pp. 1--340, 1986.
+
+\bibitem[Bio-2]{Bio-2} M. Winding et al., ``The Connectome of an Insect Brain,'' \textit{Science},
+    vol. 379, no. 6636, 2023.
+
+\bibitem[Bio-3]{Bio-3} S. Dorkenwald et al., ``Neuronal Wiring Diagram of an Adult Brain,''
+    \textit{Nature}, vol. 634, pp. 124--138, 2024.
+
+\bibitem[Bio-4]{Bio-4} MICrONS Consortium et al., ``Functional Connectomics Spanning Multiple Areas
+    of Mouse Visual Cortex,'' \textit{Nature}, vol. 640, no. 8058, pp. 435--447, 2025.
+
+\bibitem[Bio-5]{Bio-5} F. D. Jordan et al., ``Open and Remotely Accessible Neuroplatform for
+    Research in Wetware Computing,'' \textit{Frontiers in Artificial Intelligence}, vol. 7, 2024.
+
+\bibitem[Bio-6]{Bio-6} B. Kagan et al., ``In vitro neurons learn and exhibit sentence when embodied
+    in a simulated game-world,'' \textit{Neuron}, vol. 110, no. 23, pp. 3952--3969, 2022.
+
+\bibitem[Bio-7]{Bio-7} A. Sandberg and N. Bostrom, ``Whole Brain Emulation: A Roadmap,'' Future of
+    Humanity Institute, Oxford University, Technical Report \#2008-3, 2008.
+
+\bibitem[Bio-8]{Bio-8} N. Zanichelli et al., ``State of Brain Emulation Report 2025,''
+    arXiv:2510.15745, 2025.
+
+\bibitem[Bio-9]{Bio-9} A. L. Hodgkin and A. F. Huxley, ``A Quantitative Description of Membrane
+    Current and Its Application to Conduction and Excitation in Nerve,'' \textit{Journal of
+    Physiology}, vol. 117, pp. 500--544, 1952.
+
+\bibitem[Bio-10]{Bio-10} L. Lapicque, ``Recherches quantitatives sur l'excitation electrique des
+    nerfs,'' \textit{Journal de Physiologie et de Pathologie G\'{e}n\'{e}rale}, vol. 9,
+    pp. 620--635, 1907.
+
+\end{thebibliography}
+
+\vspace{1em}
+{\noindent\bfseries The Algorithm of Who We Are}\par\smallskip
+\begin{thebibliography}{Alg-10}
+
+\bibitem[Alg-1]{Alg-1} J. Bowlby, \textit{Attachment and Loss, Vol. 1: Attachment}. New York:
+    Basic Books, 1969.
+
+\bibitem[Alg-2]{Alg-2} T. R. Insel and L. J. Young, ``The Neurobiology of Attachment,''
+    \textit{Nature Reviews Neuroscience}, vol. 2, no. 2, pp. 129--136, 2001.
+
+\bibitem[Alg-3]{Alg-3} H. Fisher, A. Aron, and L. L. Brown, ``Romantic Love: An fMRI Study of a
+    Neural Mechanism for Mate Choice,'' \textit{Journal of Comparative Neurology}, vol. 493, no. 1,
+    pp. 58--62, 2005.
+
+\bibitem[Alg-4]{Alg-4} D. R. Hofstadter, \textit{G\"{o}del, Escher, Bach: An Eternal Golden
+    Braid}. New York: Basic Books, 1979.
+
+\bibitem[Alg-5]{Alg-5} D. R. Hofstadter, \textit{I Am a Strange Loop}. New York: Basic Books,
+    2007.
+
+\bibitem[Alg-6]{Alg-6} A. Damasio, \textit{Self Comes to Mind: Constructing the Conscious Brain}.
+    New York: Pantheon Books, 2010.
+
+\bibitem[Alg-7]{Alg-7} D. J. Chalmers, ``Facing Up to the Problem of Consciousness,''
+    \textit{Journal of Consciousness Studies}, vol. 2, no. 3, pp. 200--219, 1995.
+
+\bibitem[Alg-8]{Alg-8} G. Tononi, ``An Information Integration Theory of Consciousness,''
+    \textit{BMC Neuroscience}, vol. 5, no. 42, 2004.
+
+\bibitem[Alg-9]{Alg-9} B. J. Baars, \textit{A Cognitive Theory of Consciousness}. Cambridge:
+    Cambridge University Press, 1988.
+
+\bibitem[Alg-10]{Alg-10} M. Piolatto et al., ``The Effect of Social Relationships on Cognitive
+    Decline in Older Adults,'' \textit{BMC Public Health}, vol. 22, no. 278, 2022.
+
+\end{thebibliography}
+
+\vspace{1em}
+{\noindent\bfseries Computer Science}\par\smallskip
+\begin{thebibliography}{CS-6}
+
+\bibitem[CS-1]{CS-1} A. M. Turing, ``On Computable Numbers, with an Application to the
+    Entscheidungsproblem,'' \textit{Proceedings of the London Mathematical Society}, vol. 42,
+    pp. 230--265, 1936.
+
+\bibitem[CS-2]{CS-2} A. Church, ``An Unsolvable Problem of Elementary Number Theory,''
+    \textit{American Journal of Mathematics}, vol. 58, no. 2, pp. 345--363, 1936.
+
+\bibitem[CS-3]{CS-3} J. von Neumann, ``First Draft of a Report on the EDVAC,'' Moore School of
+    Electrical Engineering, University of Pennsylvania, 1945.
+
+\bibitem[CS-4]{CS-4} W. S. McCulloch and W. Pitts, ``A Logical Calculus of the Ideas Immanent in
+    Nervous Activity,'' \textit{Bulletin of Mathematical Biophysics}, vol. 5, pp. 115--133, 1943.
+
+\bibitem[CS-5]{CS-5} F. Rosenblatt, ``The Perceptron: A Probabilistic Model for Information
+    Storage and Organization in the Brain,'' \textit{Psychological Review}, vol. 65, no. 6,
+    pp. 386--408, 1958.
+
+\bibitem[CS-6]{CS-6} K. R. Popper, \textit{The Logic of Scientific Discovery}. London:
+    Hutchinson, 1959.
+
+\end{thebibliography}
+
+\vspace{1em}
+{\noindent\bfseries How Computer Science Borrowed from Neuroscience}\par\smallskip
+\begin{thebibliography}{Bor-10}
+
+\bibitem[Bor-1]{Bor-1} W. S. McCulloch and W. Pitts, ``A Logical Calculus of the Ideas Immanent in
+    Nervous Activity,'' \textit{Bulletin of Mathematical Biophysics}, vol. 5, pp. 115--133, 1943.
+
+\bibitem[Bor-2]{Bor-2} F. Rosenblatt, ``The Perceptron: A Probabilistic Model for Information
+    Storage and Organization in the Brain,'' \textit{Psychological Review}, vol. 65, no. 6,
+    pp. 386--408, 1958.
+
+\bibitem[Bor-3]{Bor-3} M. Minsky and S. Papert, \textit{Perceptrons: An Introduction to
+    Computational Geometry}. Cambridge, MA: MIT Press, 1969.
+
+\bibitem[Bor-4]{Bor-4} D. E. Rumelhart, G. E. Hinton, and R. J. Williams, ``Learning
+    Representations by Back-Propagating Errors,'' \textit{Nature}, vol. 323, pp. 533--536, 1986.
+
+\bibitem[Bor-5]{Bor-5} Y. LeCun, Y. Bengio, and G. Hinton, ``Deep Learning,'' \textit{Nature},
+    vol. 521, pp. 436--444, 2015.
+
+\bibitem[Bor-6]{Bor-6} D. C. Van Essen et al., ``The WU-Minn Human Connectome Project: An
+    Overview,'' \textit{NeuroImage}, vol. 80, pp. 62--79, 2013.
+
+\bibitem[Bor-7]{Bor-7} H. Markram et al., ``Reconstruction and Simulation of Neocortical
+    Microcircuitry,'' \textit{Cell}, vol. 163, no. 2, pp. 456--492, 2015.
+
+\bibitem[Bor-8]{Bor-8} L. Smirnova et al., ``Organoid Intelligence (OI): The New Frontier in
+    Biocomputing and Intelligence-in-a-Dish,'' \textit{Frontiers in Science}, vol. 1, 2023.
+
+\bibitem[Bor-9]{Bor-9} B. Kagan et al., ``In vitro neurons learn and exhibit sentence when embodied
+    in a simulated game-world,'' \textit{Neuron}, vol. 110, no. 23, pp. 3952--3969, 2022.
+
+\end{thebibliography}
+
+\end{document}
