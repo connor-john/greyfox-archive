@@ -1,0 +1,677 @@
+% =====================================================================
+% The Algorithm of Who We Are -- GreyFox, Jibaro Archives, 2026
+% Transcribed from screenshots into LaTeX
+% =====================================================================
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1.15in]{geometry}
+\usepackage[protrusion=true,expansion=false]{microtype}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[hidelinks,
+            colorlinks=true,
+            linkcolor=black,
+            citecolor=teal!70!black,
+            urlcolor=teal!70!black]{hyperref}
+
+\titleformat{\section}{\large\bfseries}{\thesection}{0.8em}{}
+\titlespacing*{\section}{0pt}{1.6em}{0.6em}
+
+\renewenvironment{quote}
+  {\list{}{\leftmargin=2.2em\rightmargin=2.2em\topsep=0.4em\parsep=0.3em}%
+   \item\relax\itshape}
+  {\endlist}
+
+\newcommand{\attrib}[1]{\par\vspace{0.2em}\normalfont\small\hspace*{0em}--\ #1\par}
+\newcommand{\nbk}[1]{\par\vspace{0.3em}\noindent\textit{note: #1}\par\vspace{0.3em}}
+\newcommand{\ann}[1]{\par\noindent{\small\itshape #1}\par\vspace{0.15em}}
+
+\setlength{\emergencystretch}{2em}
+
+\begin{document}
+
+% =====================================================================
+% Title block
+% =====================================================================
+\begin{center}
+{\LARGE\bfseries THE ALGORITHM OF WHO WE ARE}\\[1.0em]
+{\itshape\large Doing webpages and making apps is not Computer Science,\\
+but a consequence and discipline in the very broad field of Computation}\\[1.2em]
+{\itshape A collection of private note fragments, gathered and completed from GreyFox's Notebook}\\[0.3em]
+Shared for Jibaro Archives, marked by IIX.\\[0.2em]
+{\small\color{gray!60!black} 2026 \ //\ Open Classification}
+\end{center}
+
+\vspace{0.5em}
+\noindent\rule{\textwidth}{1.2pt}
+\vspace{0.4em}
+
+% =====================================================================
+% Abstract
+% =====================================================================
+\begin{center}
+\textbf{\large ABSTRACT}
+\end{center}
+
+If a human mind were to be mapped and executed on non-biological hardware, the question is not only technical. It is also this: what would need to be preserved for the result to still be the same person? Connectome data and neural simulation algorithms address the structural problem. They do not address the integrity problem. What follows examines three components that formal research has identified as foundational to what a person is: the biological and neurological basis of love and personal relationships, the documented role of recursive self-reference in identity and cognition, and the formal problem of consciousness as it stands in published scientific and philosophical literature. No claim is made here beyond what has been formally published.
+
+\vspace{0.4em}
+\noindent\rule{\textwidth}{0.4pt}
+
+% =====================================================================
+% 1
+% =====================================================================
+\section{Love and Personal Relationships}
+
+The neurobiological basis of love and social bonding is one of the most extensively documented areas in behavioral neuroscience. The attachment system, first formally described by John Bowlby in his 1969 monograph \textit{Attachment}, identifies a behavioral and neurological system evolved to maintain proximity between individuals.~[1] Bowlby's framework established that attachment is not a learned association or a secondary drive but a primary motivational system with its own neural architecture.
+
+The neurochemical substrate of pair bonding was documented by Thomas Insel and Larry Young in research published in 2001 in \textit{Nature Reviews Neuroscience}.~[2] Their work identified oxytocin and vasopressin as the primary mediators of social attachment, operating through reward circuitry in the nucleus accumbens and ventral tegmental area. The same dopaminergic pathways that underlie motivated behavior toward food and survival are recruited by social bonding. Love, in the neurological sense, is not separate from the reward system. It is an expression of it directed at another person.
+
+Helen Fisher, Arthur Aron, and Lucy Brown published neuroimaging data in 2005 in the \textit{Journal of Comparative Neurology} showing that early-stage romantic love activates the caudate nucleus and ventral tegmental area, regions associated with reward, motivation, and goal-directed behavior.~[3] The pattern was consistent across subjects and distinct from sexual arousal. Love produces a measurable, reproducible neural signature.
+
+\nbk{The algorithm of who we are\ldots.\ I should write it down but I don't know what I'm even saying.}
+
+% --- Simple A(p,t) formula embedded in Section 1 ---
+\vspace{0.3em}
+\noindent\rule{\linewidth}{0.4pt}
+\vspace{0.2em}
+
+\noindent\textbf{A(\,p,\,t\,)} \hspace{2em}
+$:$ \enspace state variable tracking attachment strength of person $p$ at time $t$
+\hfill {\small Bowlby 1969~[1]}
+
+\[
+  \frac{dA}{dt} \;=\; \lambda_{\text{form}} \cdot \mathrm{bond}(p,t) \cdot \mathrm{oxytocin}(p,t)
+  \;-\; \lambda_{\;\text{decay}} \cdot A(t)
+\]
+
+\ann{$\lambda_{\text{form}}$ = attachment formation rate.\quad
+$\lambda_{\text{decay}}$ = natural decay.\quad
+$\mathrm{bond}(p,t)$ = dyadic bond strength.}
+\ann{note: when $\mathrm{bond}(p,t) \to 0$ (death of attached person),
+$dA/dt = -\lambda_{\text{decay}} \cdot A(t)$.\quad grief as exponential decay.}
+
+\vspace{0.1em}
+\noindent\rule{\linewidth}{0.4pt}
+\vspace{0.3em}
+
+What this means for identity is significant. Social bonds are not ornamental. They are structurally embedded in the reward and motivational architecture of the brain. A person's attachment history shapes the development of their prefrontal cortex, their stress response system, and their capacity for emotional regulation. Bowlby's later work and subsequent research by Mary Ainsworth established that early attachment patterns persist and influence behavior across the lifespan.~[1]
+
+\begin{quote}
+``Can personal relationships and social interaction impact cognitive decline?''
+\attrib{GreyFox}
+\end{quote}
+
+The answer, documented in published research, is yes. A systematic review and meta-analysis by Piolatto et al., published in \textit{BMC Public Health} in 2022, examined longitudinal cohort studies and confirmed that poor social relationships across structural, functional, and combined measures are associated with measurable cognitive decline.~[10] Social engagement promotes neuroprotection, operating through pathways that overlap with the neurobiological effects of physical exercise on neurodegeneration. The bond is not just emotionally significant. It is neurologically load-bearing.
+
+\nbk{Consistency and integrity is gonna be a pain when uploading anything truly intelligent.}
+
+\begin{quote}
+``Are logic and emotions really that far apart? Can we reach greater things without creativity? Or do emotions inspire logic? Kinda weird because math should only be just logic\ldots\ but without passion, mathematicians get nowhere.''
+\attrib{GreyFox}
+\end{quote}
+
+% =====================================================================
+% 2
+% =====================================================================
+\section{Recursive Components}
+
+In 1979, Douglas Hofstadter published \textit{Godel, Escher, Bach: An Eternal Golden Braid}, a Pulitzer Prize-winning work examining the relationship between formal systems, self-reference, and the emergence of meaning.~[4] The central argument is that consciousness and identity arise from strange loops: systems that fold back on themselves, where a process at one level becomes the object of a process at a higher level, until the system is referring to itself.
+
+Hofstadter extended this argument in \textit{I Am a Strange Loop}, published in 2007, arguing directly that the self is a self-referential pattern: a symbol that represents itself within the neural substrate that produces it.~[5] The pattern is not located in any specific neuron or region. It is an emergent property of the system's recursive activity. Hofstadter grounds the argument in Godel's incompleteness theorems, which establish formally that sufficiently complex formal systems produce statements that refer to themselves, and that this self-reference is not a bug but an intrinsic property of such systems.
+
+\nbk{My issue is with core integrity. I sit at the gym staring at walls thinking. What algorithm can capture who you are when you're uploaded? Maybe not fully capture. No, at least support the core infrastructure's integrity, keep it running with loyalty to its original core, and maybe independence in itself.}
+
+% --- Simplified R(p) formula embedded in Section 2 ---
+\vspace{0.3em}
+\noindent\rule{\linewidth}{0.4pt}
+\vspace{0.2em}
+
+\noindent\textbf{R(\,p\,)}
+\hspace{2em}
+$:$ \enspace self-referential cognitive model.\quad $R \in L^2(\Omega)$
+\hfill {\small Hofstadter 1979~[4]}
+
+\vspace{0.2em}
+\noindent\hspace{2em}$R^*(p) \;=\; F[\,R^*(p)\,]$
+\hspace{2em}
+where $F : L^2(\Omega) \to L^2(\Omega)$ is the cognitive update operator
+
+\vspace{0.2em}
+\noindent\hspace{2em}$\|\,F(R_1) - F(R_2)\,\|$
+\hspace{2em}
+$\leq\; k \cdot \|\,R_1 - R_2\,\|,\quad k < 1$
+\hspace{2em}
+{\small\itshape (contraction, $k$ = Lipschitz const.)}
+
+\vspace{0.2em}
+\ann{by Banach fixed-point theorem: unique $R^*$ exists.\quad $R(p)$ is the strange loop.~[4]}
+
+\vspace{0.1em}
+\noindent\rule{\linewidth}{0.4pt}
+\vspace{0.3em}
+
+The computational parallel is direct. Recursive functions call themselves. They are not merely a programming technique. They are the formal expression of a system modeling its own state. Antonio Damasio's research on the autobiographical self, published in \textit{Self Comes to Mind} in 2010, documents how the brain constructs a running model of itself across time, integrating memory, body state, and current experience into a continuous narrative that the organism experiences as identity.~[6]
+
+If an uploaded mind lacks recursive self-reference, it does not lack a feature. It lacks the structural basis of a self. The self is not a thing inside the brain. It is a process the brain runs: the process of modeling itself as an object in its own cognitive field. The fixed-point equation $R^* = F[R^*]$ captures this precisely. A self exists when its self-model is stable under iteration.
+
+% =====================================================================
+% Figure 1 — Identity, A(p,t), R(p)
+% =====================================================================
+\clearpage
+\vspace{0.4em}
+\noindent\rule{\textwidth}{0.8pt}
+
+\vspace{0.4em}
+\noindent\textbf{\large Identity$(\,p,\;t\,)$}
+\hfill
+\textbf{\large $:=\;\{A,\;R,\;C,\;S,\;M\}$}
+
+\vspace{0.1em}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.2em}
+
+\ann{$A$ = attachment,\quad $R$ = self-ref,\quad $C$ = consciousness,\quad
+$S$ = social network,\quad $M$ = autobiographical self
+\hfill --- \textit{what even is $p$ here?}}
+
+\vspace{0.5em}
+
+% --- A(p,t) expanded ---
+\noindent\textbf{\large $A(\mathbf{p},\,t)$}
+\hspace{2em}
+$:\enspace A \in [0,1],\quad A(p,0) = A_0$
+\hfill {\small Bowlby 1969~[1]}
+
+\vspace{0.2em}
+\noindent\hspace{2em}$\dfrac{dA}{dt}$
+\hspace{1em}
+$=\;\lambda_{\text{form}} \cdot B(p,t) \cdot [\mathrm{OXT}](p,t)
+  \;-\; \lambda_{\text{decay}} \cdot A(t)
+  \;-\; \delta(p,t) \cdot A(t)$
+
+\ann{$B(p,t)$ = dyadic bond function.\quad
+$[\mathrm{OXT}]$ = oxytocin concentration.\quad
+$\delta(p,t)$ = external disruption term.}
+
+\vspace{0.2em}
+\noindent{\small\itshape when $B(p,t) \to 0$:\hspace{1.5em}
+$\dfrac{dA}{dt} = -(\lambda_{\text{decay}} + \delta)\cdot A(t)$
+\hspace{2em}
+$\blacksquare\enspace A(t) = A_0\cdot e^{-(\lambda+\delta)t}$}
+
+\ann{grief as exponential decay.\quad
+$\delta$ = acute disruption coefficient.\quad
+time constant $\tau = 1/(\lambda+\delta)$.}
+\ann{question: does the decay term survive substrate change?\quad can $[\mathrm{OXT}]$ be emulated in silicon?}
+
+\vspace{0.2em}
+\noindent\hspace{2em}$\dfrac{d^{\,2}A}{dt^2}$
+\hspace{1em}
+$=\;\lambda_{\text{form}} \cdot \!\left(\beta_1 \cdot \dfrac{dB}{dt}
+    + \beta_2 \cdot \dfrac{d[\mathrm{OXT}]}{dt}\right)
+  \;-\; \lambda_{\text{decay}} \cdot \dfrac{dA}{dt}$
+
+\ann{second-order: rate of change of attachment changes.\quad captures building and fading of bonds over time.}
+
+\vspace{0.3em}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.3em}
+
+% --- R(p) ---
+\noindent\textbf{\large $R(\mathbf{p})$}
+\hspace{2em}
+$:$ \enspace self-referential model.\quad $R \in L^2(\Omega)$
+\hfill {\small Hofstadter 1979~[4]}
+
+\ann{$\Omega$ = cognitive state space of $p$}
+
+\vspace{0.2em}
+\noindent\hspace{2em}$R^*(p) \;=\; F\!\left[\,R^*(p)\,\right]$
+\hspace{4em}
+where $F : L^2(\Omega) \to L^2(\Omega)$
+
+\ann{$F$ is the cognitive update operator.\quad by Banach fixed-point theorem:}
+
+\noindent\hspace{2em}$\bigl\|\,F(R_1) - F(R_2)\,\bigr\|$
+\hspace{4em}
+$\leq\; k \cdot \bigl\|\,R_1 - R_2\,\bigr\|$
+\hspace{4em}
+for $k < 1$
+
+\ann{$\blacksquare$ \enspace unique fixed point $R^*$ exists and the iteration $R_{n+1} = F(R_n)$ converges to $R^*$.}
+\ann{candidate form for $F$:}
+
+\noindent$F[R](x)$
+\hspace{4em}
+$=\;\displaystyle\int K(x,x') \cdot R(x')\,dx'
+  \;+\; \eta\!\left(x,\;A(p,t),\;M(p,t)\right)$
+
+\ann{$K(x,x')$ = attention kernel over cognitive state space.\quad $\eta$ = external input from $A$ and $M$.}
+\ann{$F$ is a contraction if $\|K\|_{\mathrm{op}} < 1$.\quad this is the condition for a stable self.}
+
+\noindent$R^*(p) \;=\; \lim_{n \to \infty}\; F^n(R_0)$
+\hspace{4em}
+for any $R_0 \in L^2(\Omega)$
+
+\ann{the self converges to a fixed pattern through repeated self-modeling.\quad $R^*$ is the stable identity.}
+
+\par\noindent{\small\itshape
+question: if substrate changes at iteration $n$, does the sequence still converge to the same $R^*$?%
+\hfill\normalfont\textbf{?}}\par
+
+\vspace{0.3em}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.3em}
+
+% --- Formal analog ---
+\noindent{\normalsize\bfseries Formal analog\;(\,Gödel 1931\,):}
+
+\vspace{0.2em}
+\noindent\hspace{2em}$G \;\Longleftrightarrow\; \neg\,\mathrm{Provable}(G)$
+
+\ann{a well-formed sentence that asserts its own unprovability.\quad self-reference at the level of syntax.}
+\ann{$R(p)$ is the semantic analog: a cognitive state that models itself as a cognitive state.}
+
+\vspace{0.3em}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.3em}
+
+% --- p(t+Δt) ---
+\noindent\hspace{2em}$p(t + \Delta t)$
+\hspace{2em}
+$=\; p(t) \;+\; \dfrac{dp}{dt} \cdot \Delta t \;+\; O(\Delta t^2)$
+
+\vspace{0.2em}
+\noindent\hspace{2em}where $\;\dfrac{dp}{dt}$
+\hspace{2em}
+$=\; f\!\left(\,A(p,t),\;R(p),\;C(p),\;S(p,t),\;M(p,t),\;\mathrm{env}(t)\,\right)$
+
+\par\noindent{\small\itshape
+identity is a trajectory through state space, not a point.\quad uploading copies a snapshot, not a flow.%
+\hfill\normalfont\textbf{?}}\par
+
+\vspace{0.3em}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.2em}
+
+\ann{open $(A,R)$: can $[\mathrm{OXT}]$ dynamics be emulated without biological substrate?\quad
+is $R^*$ unique for each person?\quad does $k$ vary with trauma?}
+
+\ann{note: core integrity might also reduce cost.\quad does it translate to hardware cost,
+or does the uploaded brain simply\ldots\ decay\ldots\ if it can't support itself?}
+
+\vspace{0.4em}
+\begin{center}
+\textbf{Figure 1} \;--\; \textit{``Taken from GreyFox's private notebook\;\,//\;\,Identity, $A(p,t)$, $R(p)$''}
+\end{center}
+
+\vspace{0.2em}
+\noindent\rule{\textwidth}{0.8pt}
+
+% =====================================================================
+% 3
+% =====================================================================
+\section{Consciousness: True, Not Simulated}
+
+The hard problem of consciousness, named and formalized by David Chalmers in his 1995 paper \textit{Facing Up to the Problem of Consciousness}, draws a distinction between the functional problems of cognition and the explanatory gap that remains even after all functional problems are solved.~[7] Explaining how the brain processes information, integrates sensory data, and produces behavior does not explain why there is something it is like to be the system doing the processing.
+
+Giulio Tononi's Integrated Information Theory, published in \textit{BMC Neuroscience} in 2004, proposes that consciousness corresponds to integrated information in a system, quantified as phi.~[8] A system is conscious to the degree that its parts are informationally integrated in a way that cannot be decomposed without loss. The theory predicts that a system that merely simulates integration, without actually performing it, would have near-zero phi and therefore near-zero consciousness. This is the substrate question made precise: does silicon running a brain simulation have the same causal structure as the biological original?
+
+\vspace{0.3em}
+\noindent\rule{\linewidth}{0.4pt}
+\vspace{0.2em}
+
+\noindent\textbf{C(\,p\,)}
+\hspace{4em}
+$=\;\Phi(X) > \Phi_{\min}$
+\hspace{2em}
+{\small\itshape where $\Phi$ = integrated information (Tononi 2004)}
+\hfill {\small Tononi 2004~[8]}
+
+\vspace{0.2em}
+\noindent\hspace{2em}
+$\Phi(X) := \min_{M_k}\; EI(X \to X \mid M_k)$
+\hspace{1.5em}
+$=\; H(X_t \mid X_{t-1}) - H(X_{t-1} \mid X_{t-1}\,M_k)$
+
+\vspace{0.2em}
+\ann{minimum over all bipartitions $M_k$ of $X$.\quad $\Phi = 0$ iff system is fully decomposable (no consciousness).}
+\ann{substrate independence: $\Phi$ depends on causal structure, not material.\quad question: does upload preserve causal structure?}
+
+\vspace{0.1em}
+\noindent\rule{\linewidth}{0.4pt}
+\vspace{0.3em}
+
+Bernard Baars' Global Workspace Theory, developed from 1988, proposes that consciousness arises when information is broadcast across a global workspace, making it available to a wide range of cognitive processes simultaneously.~[9] This framework has been supported by neuroimaging studies showing characteristic patterns of widespread cortical activation during conscious processing. Both theories agree: consciousness is not a byproduct. It is a specific property of a specific kind of information processing. Whether a digital emulation of a brain would produce true consciousness or merely a functional analog remains unresolved.
+
+\nbk{of course there's a lot more to it. but off the top of my head: love, recursive components, and\ldots\ what would the third ingredient even be? I wonder.}
+
+Chalmers has argued that without resolving the hard problem, we cannot know in advance whether any physical system, biological or artificial, is conscious. This is the deepest obstruction to the upload project: we do not have a test for consciousness that we could apply to a candidate upload and get a reliable answer.
+
+% =====================================================================
+% 4
+% =====================================================================
+\section{What This Means for the Upload Question}
+
+The three components identified here are not arbitrary. They are the components that formal research has identified as constitutive of personhood at the neurological, cognitive, and phenomenological levels. Social bonds are structurally embedded in the neural architecture. Recursive self-reference is the documented basis of identity. Consciousness is the property that makes any of it matter.
+
+A whole brain emulation that preserved connectome structure but failed to replicate integrated information would, by Tononi's framework, produce something with near-zero consciousness. One that lacked recursive self-modeling would, by Hofstadter's framework, lack the strange loop that constitutes a self. One that preserved structure and process but was severed from its relational history would be missing the attachment architecture that shaped who the person was.
+
+\vspace{0.3em}
+\noindent\rule{\linewidth}{0.4pt}
+\vspace{0.2em}
+
+\noindent\textbf{S(\,p,\;t\,)}
+\hspace{2em}
+$=\;\bigl(V_p,\;E_p,\;w\bigr)$\enspace where $w: E \to \mathbb{R}$
+\hfill {\small Piolatto 2022~[10]}
+
+\vspace{0.2em}
+\noindent\hspace{2em}
+$\partial w_{ij}/\partial t$
+\hspace{2em}
+$=\;\gamma \cdot \mathrm{interaction}(i,j,t) \;-\; \mu \cdot w_{ij}$
+
+\ann{graph Laplacian $L = D - W$.\quad spectral gap $\lambda_2(L)$ measures social cohesion.}
+\ann{post-upload: old edges $E_p$ freeze or decay.\quad $\partial w_{ij}/\partial t \to -\mu w_{ij}$.\quad network collapses.}
+
+\vspace{0.4em}
+\noindent\textbf{M(\,p,\;t\,)}
+\hspace{2em}
+$=\;\displaystyle\int_0^t K(t,\tau) \cdot \bigl[\,\mathrm{mem}(p,\tau) + \mathrm{body}(p,\tau) + \mathrm{exp}(p,\tau)\,\bigr]\,d\tau$
+\hfill {\small Damasio 2010~[6]}
+
+\vspace{0.2em}
+\noindent\hspace{2em}
+$K(t,\tau) = e^{-\lambda(t-\tau)}$
+\hspace{2em}
+{\small\itshape (exponential decay kernel,\enspace $\lambda$ = memory decay rate)}
+
+\ann{note: $K(t,\tau)$ can be replaced by a learned kernel.\quad question: which kernel is cognitively faithful?}
+
+\vspace{0.1em}
+\noindent\rule{\linewidth}{0.4pt}
+\vspace{0.3em}
+
+The social network formulation makes the problem concrete. After upload, the edge weight dynamics freeze or reverse. New bonds can form in principle, but the existing network, the one that shaped every aspect of who this person is, is no longer subject to the same biological feedback loops. The Fiedler value of the social graph begins to decay. Whether this constitutes a loss of identity or merely a change is exactly the question the integrity condition is trying to ask.
+
+\vspace{0.3em}
+\noindent\rule{\linewidth}{0.4pt}
+\vspace{0.2em}
+
+\noindent\textbf{Integrity(\,$\mathbf{p}$,\enspace upload\,)}
+\hspace{1em}
+$:=\;\mathrm{True}$\enspace iff\enspace
+$W_2(\mu_{\mathrm{upload}},\,\mu_{\mathrm{orig}}) \leq \varepsilon$
+
+\vspace{0.2em}
+\noindent\hspace{2em}
+where $\;W_2(\mu,\nu)$
+\hspace{1.5em}
+$=\;\Bigl(\displaystyle\inf_{\gamma \in \Gamma(\mu,\nu)}\iint \|x-y\|^2\,d\gamma(x,y)\Bigr)^{\!1/2}$
+
+\ann{$W_2$ = Wasserstein-2 distance.\quad $\Gamma(\mu,\nu)$ = set of all couplings of $\mu$ and $\nu$.\quad optimal transport.}
+\ann{this is the right metric: it measures cost of transforming one identity-distribution into another.}
+
+\vspace{0.1em}
+\noindent\rule{\linewidth}{0.4pt}
+\vspace{0.3em}
+
+The Wasserstein-2 formulation is the right metric here. It is not enough to ask whether the identity distributions are close in some naive sense. $W_2$ measures the minimum cost of transporting one probability distribution into another, accounting for the geometry of the space. A person is not a point. A person is a distribution over possible states, behaviors, memories, and responses. The upload problem is an optimal transport problem.
+
+\nbk{core integrity might also reduce cost. does it translate to hardware cost, or does the uploaded brain simply\ldots\ decay\ldots\ if it can't support itself?}
+
+\nbk{someone has to ask the question. i'll leave my notebook out there. someone smarter will fix it or make it.}
+
+% =====================================================================
+% Figure 2 — Integrity and Loss
+% =====================================================================
+\clearpage
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.2em}
+
+\noindent{\large\bfseries Integrity and Loss}
+\hfill
+{\normalsize\itshape the upload problem stated formally}
+
+\vspace{0.2em}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5em}
+
+% --- C(p) ---
+\noindent\textbf{\large $C(\mathbf{p})$}
+\hspace{4em}
+$=\;\bigl[\,\Phi(X) > \Phi_{\min}\,\bigr]$
+\hfill {\small Tononi 2004~[8]}
+
+\[
+  \Phi(X) \;:=\; \min_{M_k \in P(X)}\; EI(X \mid M_k)
+\]
+\[
+  EI(X \mid M_k) \;=\; H(X_t \mid X_{t-1}) \;-\; H(X_{t-1} \mid X_{t-1}\,M_k)
+\]
+
+\ann{$H$ = Shannon entropy.\quad $M_k$ = bipartition of $X$.\quad
+minimum over all bipartitions = most informationally independent cut.}
+\ann{$\Phi = 0$: system is decomposable, no consciousness.\quad
+$\Phi > 0$: irreducible causal structure.}
+
+\par\noindent{\small\itshape
+substrate independence: $\Phi$ is a property of causal structure.\quad
+question: does silicon preserve the same causal structure as neurons?%
+\hfill\normalfont\textbf{?}}\par
+
+\vspace{0.3em}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.3em}
+
+% --- S(p,t) ---
+\noindent\textbf{\large $S(\mathbf{p},\,t)$}
+\hspace{2em}
+$=\; G(t) = \bigl(V_p,\;E_p,\;w: E \to \mathbb{R}^+\bigr)$
+\hfill {\small Piolatto 2022~[10]}
+
+\[
+  \frac{dw_{ij}}{dt} \;=\; \gamma \cdot \mathrm{interaction}(i,j,t) \;-\; \mu \cdot w_{ij}(t)
+\]
+
+\ann{$\gamma$ = bond formation rate.\quad $\mu$ = natural decay rate.}
+
+\vspace{0.2em}
+\noindent\textbf{\textit{Laplacian:}}
+\hspace{1em} $L = D - W$
+\hspace{2em} where $D$ = degree matrix, $W$ = weight matrix
+
+\vspace{0.15em}
+\noindent\textbf{\textit{Fiedler value:}}
+\hspace{1em} $\lambda_2(L)$ = algebraic connectivity = social cohesion
+
+\vspace{0.2em}
+\ann{poor $S(p,t) \Rightarrow \lambda_2(L)$ falls $\Rightarrow$ cognitive decline~[10].\quad
+after upload: old edges frozen.\quad $dw_{ij}/dt \to -\mu w_{ij}$.\quad network collapses.}
+
+\par\noindent{\small\itshape
+question: can new social bonds form in emulated substrate?\quad
+what happens to $\lambda_2(L)$ post-upload?%
+\hfill\normalfont\textbf{?}}\par
+
+\vspace{0.3em}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.3em}
+
+% --- M(p,t) ---
+\noindent\textbf{\large $M(\mathbf{p},\,t)$}
+\hspace{2em}
+$=\;\displaystyle\int_0^t K(t,\tau) \cdot \phi(p,\tau)\,d\tau$
+\hfill {\small Damasio 2010~[6]}
+
+\vspace{0.2em}
+\noindent\hspace{4em}where $\;\phi(p,\tau) = \mathrm{mem}(p,\tau) + \mathrm{body}(p,\tau) + \mathrm{exp}(p,\tau)$
+
+\vspace{0.3em}
+\noindent\textbf{\textit{Exponential kernel:}}
+\hspace{1em} $K(t,\tau) = e^{-\lambda(t-\tau)}$
+\hspace{2em} $\lambda$ = memory decay rate
+
+\ann{why exponential? Markov property: future state depends only on present, not full history.}
+\ann{alternative: $K \sim (t-\tau)^{-\alpha}$ (power-law, long-range memory).\quad
+open: which is cognitively faithful?}
+
+\[
+  \frac{\partial M}{\partial t} \;=\; \phi(p,t) \;-\; \lambda \cdot M(p,t)
+\]
+
+\ann{$M$ evolves continuously.\quad
+at $t = t_{\mathrm{upload}}$: substrate changes.\quad does the kernel $K$ survive?}
+
+\vspace{0.3em}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.3em}
+
+% --- Integrity ---
+\noindent\textbf{\large $\mathrm{Integrity}(\,\mathbf{p}$,\enspace upload$\,)$}
+\hspace{1em}
+$:= \mathrm{True}$\enspace iff\enspace
+$W_2(\mu_{\mathrm{upload}},\,\mu_{\mathrm{orig}}) \leq \varepsilon$
+
+\[
+  W_2(\mu,\nu)
+  \;=\; \left(
+    \inf_{\gamma \,\in\, \Gamma(\mu,\nu)}
+    \iint \|x - y\|^2 \,d\gamma(x,y)
+  \right)^{\!1/2}
+\]
+
+\ann{optimal transport formulation.\quad
+$\Gamma(\mu,\nu)$ = set of all joint distributions with marginals $\mu,\nu$.}
+\ann{$W_2$ is the correct metric: penalizes both magnitude and geometry of identity displacement.}
+
+\par\noindent{\small\itshape
+$W_2 = 0$ means perfect upload.\quad
+$W_2 > 0$ always in practice.\quad
+is there a tolerable epsilon?\quad who decides?%
+\hfill\normalfont\textbf{?}}\par
+
+\vspace{0.3em}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.1em}
+
+\noindent\hfill{\small\itshape --- if this were easy, we'd already be there}
+
+\vspace{0.3em}
+% --- L(p,ε) ---
+\noindent\textbf{\large $L(\mathbf{p},\;\varepsilon)$}
+\hspace{2em}
+$= W_2(\mu_{\mathrm{upload}},\,\mu_{\mathrm{orig}})$
+\hspace{2em}
+subject to:\hspace{1em}$W_2 \leq \varepsilon$
+
+\ann{$L = 0$ requires perfect transport.\quad
+by continuity of $W_2$ and the irreversibility of substrate change, $L > 0$ almost surely.}
+
+\[
+  L_{\mathrm{total}} \;=\;
+  w_A \cdot L_A \;+\; w_R \cdot L_R \;+\; w_C \cdot L_C \;+\; w_S \cdot L_S \;+\; w_M \cdot L_M
+\]
+
+\ann{$L_x = \|x(p_{\mathrm{upload}},t) - x(p_{\mathrm{orig}},t)\|_2$.\quad
+weights $w_x$ unknown.\quad open problem.}
+
+\vspace{0.2em}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.2em}
+
+\ann{open:\enspace
+1.\;$\min\Phi$ for love?\enspace
+2.\;is $R^*$ unique per person?\enspace
+3.\;can $M$'s kernel be emulated?\enspace
+4.\;is $L=0$ achievable?\enspace
+5.\;what is $p$, really?}
+
+\noindent\hfill{\small\itshape write it down.}
+
+\vspace{0.3em}
+\ann{note: I borrow weird math symbols so engineers and mathematicians can help.\quad
+blind as a bat, hoping for the best.\quad but someone has to try.}
+
+\vspace{0.4em}
+\begin{center}
+\textbf{Figure 2} \;--\; \textit{Taken from GreyFox's private notebook}
+\end{center}
+
+\vspace{0.2em}
+\noindent\rule{\textwidth}{0.8pt}
+
+% =====================================================================
+% 5
+% =====================================================================
+\section{Conclusion}
+
+The research documented here was not produced in anticipation of a specific technological outcome. It was produced by neurophysiologists, computational neuroscientists, and philosophers working on tractable problems in their respective fields. The attachment system was mapped to understand infant development. The incompleteness theorems were proved to understand the limits of formal systems. The hard problem was formulated to identify what a theory of consciousness would actually need to explain. None of these efforts set out to upload a human mind.
+
+Taken together, they constitute a documented set of requirements for what any such attempt would need to preserve. The mathematics is real. The differential equations governing attachment, the fixed-point characterization of recursive self-reference, the information-theoretic definition of consciousness, the graph Laplacian of social networks, the convolution integral of autobiographical memory: these are not metaphors. They are the shape of the problem, stated as precisely as current research allows.
+
+No current system satisfies the integrity condition. Not for any organism, and certainly not for a human. The Wasserstein distance between any uploaded mind and its original is greater than zero, and we do not know what the tolerable epsilon is, or who would decide it, or whether the person on the other side of the upload would be the one who agreed to it.
+
+\nbk{Cost. Integrity. Decay. Who to blame? Hardware, software, the algorithm cost, function cost itself? Or me for having crappy memory? That's why I write everything down. Throwing random ideas out to the sky, googling old scientists, searching for weird symbols and functions that can help me express my thoughts and curiosities, at least get closer to some answers.}
+
+The equations in these pages are not solutions. They are the shape of the problem, written down so someone can see it clearly. The connectome gives us the wiring. It does not give us the loop, the bond, or the light inside.
+
+\nbk{I don't know what I'm doing, but someone had to dare try. So I'll leave it here and maybe some other genius or hardcore nerd can pick up from here.}
+
+\vspace{0.4em}
+\noindent\rule{\textwidth}{0.4pt}
+
+% =====================================================================
+% References
+% =====================================================================
+\section*{REFERENCES}
+\addcontentsline{toc}{section}{References}
+
+\begin{enumerate}
+\setlength{\itemsep}{0.35em}
+
+\item J.~Bowlby, \textit{Attachment and Loss, Vol.~1: Attachment}. New York: Basic Books, 1969.
+
+\item T.~R. Insel and L.~J. Young, ``The Neurobiology of Attachment,''
+\textit{Nature Reviews Neuroscience}, vol.~2, no.~2, pp.~129--136, 2001.
+
+\item H.~Fisher, A.~Aron, and L.~L. Brown, ``Romantic Love: An fMRI Study of a Neural Mechanism for Mate Choice,''
+\textit{Journal of Comparative Neurology}, vol.~493, no.~1, pp.~58--62, 2005.
+
+\item D.~R. Hofstadter, \textit{Godel, Escher, Bach: An Eternal Golden Braid}. New York: Basic Books, 1979.
+
+\item D.~R. Hofstadter, \textit{I Am a Strange Loop}. New York: Basic Books, 2007.
+
+\item A.~Damasio, \textit{Self Comes to Mind: Constructing the Conscious Brain}. New York: Pantheon Books, 2010.
+
+\item D.~J. Chalmers, ``Facing Up to the Problem of Consciousness,''
+\textit{Journal of Consciousness Studies}, vol.~2, no.~3, pp.~200--219, 1995.
+
+\item G.~Tononi, ``An Information Integration Theory of Consciousness,''
+\textit{BMC Neuroscience}, vol.~5, no.~42, 2004.
+
+\item B.~J. Baars, \textit{A Cognitive Theory of Consciousness}. Cambridge: Cambridge University Press, 1988.
+
+\item M.~Piolatto et al., ``The Effect of Social Relationships on Cognitive Decline in Older Adults,''
+\textit{BMC Public Health}, vol.~22, no.~278, 2022.
+
+\end{enumerate}
+
+\vspace{0.6em}
+\noindent\rule{\textwidth}{0.4pt}
+
+\begin{center}
+\itshape Note from Fox: The best computer is the human brain at virtually no cost of processing power.\\[0.6em]
+\upshape\textbf{GreyFox}\\[0.3em]
+\itshape Jibaro Archives, 2026\\[0.5em]
+\itshape\color{gray!50!black} I'm overwhelmed, so out of my depth, and yet so intrigued.
+\end{center}
+
+\end{document}

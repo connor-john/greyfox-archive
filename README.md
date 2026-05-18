@@ -9,6 +9,7 @@ Articles collected from instagram and transformed into pdfs for personal reading
 1. [Computer Science](https://github.com/connor-john/greyfox-archive/blob/main/pdf/computer_science.pdf)
 2. [Biocomputers and Uploaded Intelligence](https://github.com/connor-john/greyfox-archive/blob/main/pdf/biocomputers_uploaded_intelligence.pdf)
 3. [How Computer Science Borrowed From Neuroscience](https://github.com/connor-john/greyfox-archive/blob/main/pdf/neuroscience_cs.pdf)
+4. [The Algorithm of Who We Are](https://github.com/connor-john/greyfox-archive/blob/main/pdf/algorithm_of_who_we_are.pdf)
 
 ### Process
 
