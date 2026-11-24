@@ -11,6 +11,7 @@ Articles collected from instagram and transformed into pdfs for personal reading
 3. [How Computer Science Borrowed From Neuroscience](https://github.com/connor-john/greyfox-archive/blob/main/pdf/neuroscience_cs.pdf)
 4. [The Algorithm of Who We Are](https://github.com/connor-john/greyfox-archive/blob/main/pdf/algorithm_of_who_we_are.pdf)
 5. [Excerpt from Tribulation of the Precursor](https://github.com/connor-john/greyfox-archive/blob/main/pdf/tribulation_of_the_precursor.pdf)
+6. [Math of the Machine Through a Prism](https://github.com/connor-john/greyfox-archive/blob/main/pdf/math_of_the_machine.pdf)
 
 ### Process
 
